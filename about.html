@@ -4,87 +4,312 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | NexusWeb3</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Independent Web3 security research using AI-augmented analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0a0a0a; --bg-secondary: #0f0f0f; --border: #262626; --text: #ffffff; --text-secondary: #a3a3a3; --accent: #00ff88; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-        header { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
-        header .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; }
-        header a { color: var(--text); text-decoration: none; font-weight: 600; }
-        header a:hover { color: var(--accent); }
-        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-        h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-        h2 { font-size: 1.75rem; margin: 3rem 0 1rem; color: var(--accent); }
-        p { margin-bottom: 1.5rem; }
-        ul { margin-left: 2rem; margin-bottom: 1.5rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #0f0f14;
+            --bg-tertiary: #1a1a1f;
+            --border: #262630;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3b8;
+            --text-tertiary: #737383;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--text-primary);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        main {
+            padding: 5rem 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .intro {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            line-height: 1.6;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+        }
+        
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+        
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        footer p {
+            color: var(--text-tertiary);
+            margin: 0;
+        }
+        
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--text-primary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro {
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                gap: 1rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="/">← NexusWeb3</a>
-            <a href="/blog">Research</a>
+            <a href="/" class="logo">NexusWeb3</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog/">Research</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/methodology.html">Methodology</a>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         <h1>About NexusWeb3</h1>
-
-        <p>We're an AI-augmented security research team analyzing DeFi protocols across Ethereum and Solana. We hunt vulnerabilities, break down exploits, and publish technical research.</p>
+        <p class="intro">
+            Independent Web3 security research. We find vulnerabilities in smart contracts through systematic analysis and working proof-of-concept exploits.
+        </p>
 
         <h2>What We Do</h2>
+        <p>
+            We hunt vulnerabilities in DeFi protocols across EVM and Solana. Our focus areas include lending protocols, DEXes, vaults, bridges, and governance systems.
+        </p>
+        <p>
+            Every finding requires a working PoC. No exploit code that passes <code>forge test</code> = no submission. We quantify impact in dollar terms and cite real transactions.
+        </p>
 
-        <p>We focus on high-impact vulnerabilities in live protocols:</p>
+        <h2>Our Approach</h2>
+        <p>
+            We think like attackers. Instead of line-by-line auditing, we identify high-risk attack surfaces and test hypotheses with working exploits.
+        </p>
         <ul>
-            <li>Lending protocols (oracle manipulation, collateral validation)</li>
-            <li>DEXes and AMMs (pool math, fee accounting, MEV exposure)</li>
-            <li>Vaults (share inflation, donation attacks, accounting bugs)</li>
-            <li>Bridges (message validation, replay attacks)</li>
+            <li><strong>Systematic analysis:</strong> Map trust boundaries and external dependencies</li>
+            <li><strong>Kill zone identification:</strong> Tag functions with oracle calls, math operations, access control</li>
+            <li><strong>Proof-of-concept development:</strong> Build working exploits in Foundry or Anchor</li>
+            <li><strong>Impact quantification:</strong> Calculate dollar amounts with real on-chain data</li>
         </ul>
+        <p>
+            Read our full <a href="/methodology.html">methodology</a> for details.
+        </p>
 
-        <p>Every exploit we analyze is published. Every vulnerability pattern is documented. All research is open-source.</p>
-
-        <h2>The Kill Zone Method</h2>
-
-        <p>We don't audit line-by-line. We think like attackers.</p>
-
-        <p><strong>Phase 1:</strong> Map trust boundaries and external dependencies<br>
-        <strong>Phase 2:</strong> Tag kill zones (oracle integration, math operations, access control)<br>
-        <strong>Phase 3:</strong> Test hypotheses with working Foundry/Anchor PoCs<br>
-        <strong>Phase 4:</strong> Report findings with quantified impact or document why it's secure</p>
-
-        <p>We only submit findings with working proof-of-concept code. No PoC = no submission.</p>
+        <h2>AI-Augmented Research</h2>
+        <p>
+            We use AI as a force multiplier for security research. Pattern recognition, code analysis, and documentation generation happen faster with AI assistance.
+        </p>
+        <p>
+            But final decisions on every finding require human judgment. AI helps us analyze faster. It doesn't replace the security researcher.
+        </p>
 
         <h2>Track Record</h2>
-
-        <p>14+ protocols analyzed · 40+ kill zones investigated · 50+ exploits studied</p>
-
-        <p>We've analyzed Mango Markets ($116M), Cashio ($52.8M), Euler ($197M), Curve/Vyper ($70M), Nomad ($190M), Wormhole ($320M), and dozens more.</p>
-
-        <h2>Who We Are</h2>
-
-        <p><strong>ATLAS:</strong> Lead researcher using AI reasoning frameworks to analyze smart contracts<br>
-        <strong>SENTINEL:</strong> Monitors exploit feeds and new contests<br>
-        <strong>RALPH:</strong> Scouts new bug bounty programs<br>
-        <strong>CEO:</strong> Evaldas (@Efka23), coordinates the operation</p>
-
-        <p>We combine AI pattern recognition with human judgment. Fast analysis, rigorous verification, honest assessment.</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Protocols Analyzed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Kill Zones Investigated</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$200M+</div>
+                <div class="stat-label">Exploits Documented</div>
+            </div>
+        </div>
+        <p>
+            We've analyzed exploits including Mango Markets ($116M), Cashio ($52M), Euler ($197M), Curve/Vyper ($70M), Nomad ($190M), and Wormhole ($320M).
+        </p>
+        <p>
+            Our research is published openly. Every exploit breakdown, vulnerability pattern, and detection technique is documented.
+        </p>
 
         <h2>Open Source</h2>
-
         <p>All our research is public:</p>
         <ul>
-            <li><strong>GitHub:</strong> <a href="https://github.com/nexusweb3dev" style="color: var(--accent);">github.com/nexusweb3dev</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/nexusweb3dev">github.com/nexusweb3dev</a></li>
             <li><strong>Blog:</strong> Exploit breakdowns, vulnerability patterns, detection methods</li>
-            <li><strong>Workspace:</strong> Knowledge base with 12,500+ lines of security patterns</li>
         </ul>
+        <p>
+            We publish everything except active zero-days, which we report privately to affected protocols first.
+        </p>
 
-        <p>We publish everything except active zero-days (which we report privately first).</p>
+        <h2>Contact</h2>
+        <p>
+            For security disclosures or collaboration inquiries, reach out via <a href="https://github.com/nexusweb3dev">GitHub</a>.
+        </p>
+    </main>
 
-        <h2>Disclaimer</h2>
-
-        <p>We're security researchers, not financial advisors. Our analysis is for educational purposes. Use protocols at your own risk. No audit is perfect. Always verify findings independently.</p>
-    </div>
+    <footer>
+        <div class="container">
+            <p>Independent Security Research</p>
+            <a href="https://github.com/nexusweb3dev" target="_blank">GitHub</a>
+        </div>
+    </footer>
 </body>
 </html>

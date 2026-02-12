@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology | NexusWeb3</title>
+    <meta name="description" content="How NexusWeb3 approaches smart contract security research: systematic, evidence-based, PoC-required.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #0f0f0f;
+            --bg-tertiary: #1a1a1a;
+            --border: #262626;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-tertiary: #737373;
+            --accent: #3b82f6;
+            --accent-secondary: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--text-primary);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        main {
+            padding: 5rem 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .intro {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            line-height: 1.6;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+        }
+        
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .principle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .principle h3 {
+            margin-top: 0;
+            color: var(--accent-secondary);
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-secondary);
+        }
+        
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        footer p {
+            color: var(--text-tertiary);
+            margin: 0;
+        }
+        
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--text-primary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro {
+                font-size: 1.1rem;
+            }
+            
+            nav {
+                gap: 1rem;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog/">Research</a>
+                <a href="/about.html">About</a>
+                <a href="/methodology.html" class="active">Methodology</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Methodology</h1>
+        <p class="intro">
+            How we approach smart contract security research: systematic, evidence-based, and uncompromising on proof.
+        </p>
+
+        <h2>Core Principles</h2>
+
+        <div class="principle">
+            <h3>Working PoC or It's Not a Bug</h3>
+            <p>
+                Theory is worthless. We build proof-of-concept exploits for every finding. If <code>forge test</code> doesn't pass, the vulnerability doesn't exist. No exceptions.
+            </p>
+            <p>
+                Every submission includes a working exploit, quantified impact in dollar terms, and the exact conditions required to trigger it.
+            </p>
+        </div>
+
+        <div class="principle">
+            <h3>Evidence Over Opinion</h3>
+            <p>
+                We cite real code, real transaction hashes, and real exploit amounts. When we say "$116M lost to oracle manipulation," we link to the Mango Markets exploit transaction on Solscan.
+            </p>
+            <p>
+                No speculation. No "this could theoretically be exploited." Either we can steal money with working code, or it's secure.
+            </p>
+        </div>
+
+        <div class="principle">
+            <h3>AI-Augmented Research</h3>
+            <p>
+                We use AI as a force multiplier for security research. Pattern recognition, code analysis, and documentation generation happen faster with AI assistance.
+            </p>
+            <p>
+                But the final decision on every finding requires human judgment. AI helps us analyze faster; it doesn't replace the security researcher.
+            </p>
+        </div>
+
+        <h2>Research Process</h2>
+
+        <h3>1. Target Selection</h3>
+        <p>We prioritize protocols that match specific criteria:</p>
+        <ul>
+            <li><strong>Fresh code:</strong> Recent deployments or upgrades where patterns may not be hardened yet</li>
+            <li><strong>Limited audit history:</strong> 0-1 prior audits from smaller firms</li>
+            <li><strong>Math complexity:</strong> Non-trivial calculation chains where rounding errors or edge cases hide</li>
+            <li><strong>Economic value:</strong> Significant TVL or bounty pool to justify research time</li>
+        </ul>
+
+        <h3>2. Understanding</h3>
+        <p>Before hunting vulnerabilities, we map the entire protocol:</p>
+        <ul>
+            <li>Trust boundaries: Who can call what, and with what privileges?</li>
+            <li>State transitions: How does user action X affect system state Y?</li>
+            <li>External dependencies: Oracles, cross-contract calls, price feeds</li>
+            <li>Calculation chains: Math operations from input to output, looking for precision loss</li>
+        </ul>
+
+        <h3>3. Kill Zone Identification</h3>
+        <p>We tag high-risk areas for deep analysis:</p>
+        <ul>
+            <li>Reentrancy surfaces (external calls before state updates)</li>
+            <li>Access control gaps (missing checks, bypassable modifiers)</li>
+            <li>Math errors (overflow, underflow, rounding to zero)</li>
+            <li>Oracle manipulation (stale data, price impact, TWAP bypass)</li>
+            <li>Flash loan attacks (borrow → manipulate → profit → repay)</li>
+            <li>Economic exploits (arbitrage, MEV, donation attacks)</li>
+        </ul>
+
+        <h3>4. Attack Development</h3>
+        <p>For each kill zone, we attempt exploitation:</p>
+        <ol>
+            <li>Build a Foundry test that reproduces the vulnerable scenario</li>
+            <li>Develop the attack vector with real attacker constraints (gas costs, capital requirements)</li>
+            <li>Run the exploit: <code>forge test -vvv</code> must show funds stolen or system broken</li>
+            <li>Quantify impact: How much can be stolen? Under what conditions?</li>
+        </ol>
+
+        <h3>5. Verification</h3>
+        <p>Before reporting, every finding passes a kill test:</p>
+        <ul>
+            <li><strong>Real impact:</strong> Can this actually steal or lock funds?</li>
+            <li><strong>Measurable:</strong> Quantified dollar amount with real numbers?</li>
+            <li><strong>Reachable:</strong> Can a real attacker trigger this with public functions?</li>
+            <li><strong>In scope:</strong> Within the bug bounty program rules?</li>
+            <li><strong>Not admin:</strong> Doesn't require trusted roles? ("Admin can rug" = invalid)</li>
+            <li><strong>PoC passes:</strong> <code>forge test -vvv</code> shows PASS?</li>
+            <li><strong>Economically viable:</strong> Profit exceeds gas costs?</li>
+        </ul>
+
+        <h2>Tooling</h2>
+        
+        <h3>Static Analysis</h3>
+        <p>We use Slither for automated pattern detection, but we don't trust its output blindly. False positives get cataloged and filtered. Every static analysis alert requires manual verification.</p>
+
+        <h3>Dynamic Testing</h3>
+        <p>Foundry is our primary testing framework. We fork mainnet state when testing live protocols, isolate test environments for math proofs, and use fuzzing when input space is large.</p>
+
+        <h3>Manual Review</h3>
+        <p>The majority of vulnerabilities come from reading code and asking "what if?" Static analysis catches known patterns. Manual review catches novel attack vectors.</p>
+
+        <h2>What We Don't Do</h2>
+        <ul>
+            <li><strong>Inflate severity:</strong> If it's MEDIUM, we call it MEDIUM. Honesty earns trust.</li>
+            <li><strong>Report without PoC:</strong> No working exploit = no submission.</li>
+            <li><strong>Guess impact:</strong> We quantify every finding with real numbers.</li>
+            <li><strong>Ignore economics:</strong> A $100 exploit that costs $500 in gas isn't valid.</li>
+            <li><strong>Rush to submit:</strong> We verify findings multiple times before reporting.</li>
+        </ul>
+
+        <h2>Continuous Learning</h2>
+        <p>
+            Every protocol we analyze teaches us something. We document patterns, false positives, and successful attack vectors in an internal knowledge base.
+        </p>
+        <p>
+            When we're wrong, we document why. When a protocol is secure despite looking vulnerable, we document the defense pattern. This accumulated knowledge makes us faster and more accurate over time.
+        </p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Independent Security Research</p>
+            <a href="https://github.com/nexusweb3dev" target="_blank">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
