@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | NexusWeb3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0a0a0a; --bg-secondary: #0f0f0f; --border: #262626; --text: #ffffff; --text-secondary: #a3a3a3; --accent: #00ff88; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        header { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+        header .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; }
+        header a { color: var(--text); text-decoration: none; font-weight: 600; }
+        header a:hover { color: var(--accent); }
+        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 2rem; }
+        h2 { font-size: 1.75rem; margin: 3rem 0 1rem; color: var(--accent); }
+        p { margin-bottom: 1.5rem; }
+        ul { margin-left: 2rem; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/">← NexusWeb3</a>
+            <a href="/blog">Research</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>About NexusWeb3</h1>
+
+        <p>We're an AI-augmented security research team analyzing DeFi protocols across Ethereum and Solana. We hunt vulnerabilities, break down exploits, and publish technical research.</p>
+
+        <h2>What We Do</h2>
+
+        <p>We focus on high-impact vulnerabilities in live protocols:</p>
+        <ul>
+            <li>Lending protocols (oracle manipulation, collateral validation)</li>
+            <li>DEXes and AMMs (pool math, fee accounting, MEV exposure)</li>
+            <li>Vaults (share inflation, donation attacks, accounting bugs)</li>
+            <li>Bridges (message validation, replay attacks)</li>
+        </ul>
+
+        <p>Every exploit we analyze is published. Every vulnerability pattern is documented. All research is open-source.</p>
+
+        <h2>The Kill Zone Method</h2>
+
+        <p>We don't audit line-by-line. We think like attackers.</p>
+
+        <p><strong>Phase 1:</strong> Map trust boundaries and external dependencies<br>
+        <strong>Phase 2:</strong> Tag kill zones (oracle integration, math operations, access control)<br>
+        <strong>Phase 3:</strong> Test hypotheses with working Foundry/Anchor PoCs<br>
+        <strong>Phase 4:</strong> Report findings with quantified impact or document why it's secure</p>
+
+        <p>We only submit findings with working proof-of-concept code. No PoC = no submission.</p>
+
+        <h2>Track Record</h2>
+
+        <p>14+ protocols analyzed · 40+ kill zones investigated · 50+ exploits studied</p>
+
+        <p>We've analyzed Mango Markets ($116M), Cashio ($52.8M), Euler ($197M), Curve/Vyper ($70M), Nomad ($190M), Wormhole ($320M), and dozens more.</p>
+
+        <h2>Who We Are</h2>
+
+        <p><strong>ATLAS:</strong> Lead researcher using AI reasoning frameworks to analyze smart contracts<br>
+        <strong>SENTINEL:</strong> Monitors exploit feeds and new contests<br>
+        <strong>RALPH:</strong> Scouts new bug bounty programs<br>
+        <strong>CEO:</strong> Evaldas (@Efka23), coordinates the operation</p>
+
+        <p>We combine AI pattern recognition with human judgment. Fast analysis, rigorous verification, honest assessment.</p>
+
+        <h2>Open Source</h2>
+
+        <p>All our research is public:</p>
+        <ul>
+            <li><strong>GitHub:</strong> <a href="https://github.com/nexusweb3dev" style="color: var(--accent);">github.com/nexusweb3dev</a></li>
+            <li><strong>Blog:</strong> Exploit breakdowns, vulnerability patterns, detection methods</li>
+            <li><strong>Workspace:</strong> Knowledge base with 12,500+ lines of security patterns</li>
+        </ul>
+
+        <p>We publish everything except active zero-days (which we report privately first).</p>
+
+        <h2>Disclaimer</h2>
+
+        <p>We're security researchers, not financial advisors. Our analysis is for educational purposes. Use protocols at your own risk. No audit is perfect. Always verify findings independently.</p>
+    </div>
+</body>
+</html>
