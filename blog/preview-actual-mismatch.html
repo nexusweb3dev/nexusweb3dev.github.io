@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview vs Actual Mismatch in DeFi | NexusWeb3</title>
+    <meta name="description" content="A silent bug class where preview functions lie to users. Detection strategies, prevention patterns, and real-world examples.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0f; --bg-secondary: #0f0f14; --bg-tertiary: #1a1a1f;
+            --border: #262630; --text: #ffffff; --text-secondary: #a3a3b8; --accent: #3b82f6;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        header { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; }
+        header .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        header a { color: var(--text); text-decoration: none; font-weight: 600; }
+        header a:hover { color: var(--accent); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        article h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        article h2 { font-size: 1.8rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        article h3 { font-size: 1.3rem; margin: 1.5rem 0 0.8rem; color: var(--accent); }
+        article p { margin-bottom: 1rem; color: var(--text-secondary); }
+        article code { background: var(--bg-tertiary); padding: 0.2rem 0.4rem; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+        article pre { background: var(--bg-tertiary); padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border); }
+        article pre code { background: none; padding: 0; }
+        article ul { margin: 1rem 0 1rem 2rem; }
+        article li { margin: 0.5rem 0; color: var(--text-secondary); }
+        article strong { color: var(--text); font-weight: 600; }
+        article table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        article table th, article table td { padding: 0.8rem; border: 1px solid var(--border); text-align: left; }
+        article table th { background: var(--bg-tertiary); font-weight: 600; }
+        .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html">← NexusWeb3</a>
+            <a href="index.html">Blog</a>
+        </div>
+    </header>
+    <div class="container">
+        <article>
+            <div class="meta">February 13, 2026</div>
+            <h1>The Preview vs Actual Mismatch: A Silent Bug Class in DeFi Protocols</h1>
+<p>When users interact with DeFi protocols, they rely on preview functions to estimate outcomes before committing transactions. A deposit preview shows expected shares. A withdrawal preview displays the anticipated token amount. But what happens when the preview lies?</p>
+<p>This isn't about malicious intent. It's about <strong>implementation divergence</strong> — when a protocol's preview function uses different math than the actual execution function. The result? Users see one number, receive another, and trust erodes.</p>
+<h2>The Pattern</h2>
+<p>The vulnerability pattern appears in three-part systems:</p>
+<p>1. <strong>Preview/Calculate Function</strong> — Pure view function, no state changes, estimates outcome
+2. <strong>Actual Execution Function</strong> — State-changing function, performs the real operation
+3. <strong>The Gap</strong> — Different formulas, constants, or safety margins between preview and actual</p>
+<h3>Real-World Discovery</h3>
+<p>In recent security research of a leverage protocol, we discovered a <strong>12% discrepancy</strong> between withdrawal preview and actual execution.</p>
+<strong>The Preview Function</strong>:
+<pre><code class="language-solidity">function calculateUnwindParams(uint256 amountToUnwind) 
+    public 
+    view 
+    returns (uint256 flashLoanAmount) 
+{
+    // Uses a 5% slippage buffer
+    flashLoanAmount = baseAmount * 1.05;
+    return flashLoanAmount;
+}</code></pre>
+<strong>The Actual Execution</strong>:
+<pre><code class="language-solidity">function _executeUnwindOperation(uint256 amountToUnwind) 
+    internal 
+    returns (uint256 actualFlashLoan) 
+{
+    // Uses liquidation threshold (e.g., 85%)
+    actualFlashLoan = baseAmount * 10000 / liqThreshold; // ~117% if liqThreshold = 8500
+    return actualFlashLoan;
+}</code></pre>
+<strong>The Impact:</strong>
+<ul><li>User calls <code>calculateUnwindParams(1000e18)</code> → UI shows "You'll need to repay 1,050 tokens"</li>
+<li>User executes withdrawal → Protocol actually requests 1,170 tokens</li>
+<li><strong>12% more debt than expected</strong> — potentially causing transaction revert or unexpected liquidation</li>
+<p>While the protocol team likely added different safety mechanisms with good intentions (slippage protection vs liquidation safety), the <strong>user-facing inconsistency</strong> is the bug.</p>
+<h2>Why This Matters</h2>
+<h3>1. Trust Degradation</h3>
+Users rely on previews to make informed decisions. When actual outcomes differ significantly, even if the protocol is "safe," user confidence collapses.
+<h3>2. Transaction Failures</h3>
+If a user approves tokens based on the preview amount, and the actual execution requires more, the transaction reverts. This wastes gas and creates poor UX.
+<h3>3. Economic Exploitation</h3>
+In worst-case scenarios, attackers can exploit the discrepancy:
+<li>If the preview overestimates, an attacker might receive more than they should</li>
+<li>If the preview underestimates, users may unknowingly over-approve tokens, creating an attack surface</li>
+<h3>4. Regulatory & Audit Risk</h3>
+Disclosing one value and delivering another can be interpreted as misleading users, potentially violating consumer protection standards.
+<h2>Detection Strategy</h2>
+<p>Every security researcher and protocol developer should add this to their checklist:</p>
+<h3>Step 1: Identify Preview/Calculate Functions</h3>
+<pre><code class="language-bash"><h1>Search for common preview function patterns</h1>
+grep -rn "calculate\|preview\|estimate\|simulate" src/
+<h1>Look for view/pure functions that return amounts</h1>
+grep -rn "function.*view.*returns.*uint" src/</code></pre>
+<h3>Step 2: Find Corresponding Execution Functions</h3>
+For each preview function, identify the actual state-changing function:
+<pre><code class="language-bash"><h1>If preview is calculateUnwind, find executeUnwind or _unwind</h1>
+grep -rn "function.*Unwind\|function.*_unwind" src/</code></pre>
+<h3>Step 3: Compare Formulas Line-by-Line</h3>
+Extract the core calculation from BOTH functions and compare:
+<strong>Preview:</strong>
+<pre><code class="language-solidity">flashLoanAmount = baseAmount * 1.05;</code></pre>
+<strong>Actual:</strong>
+<pre><code class="language-solidity">actualFlashLoan = baseAmount * 10000 / liqThreshold;</code></pre>
+<strong>Test with realistic values:</strong>
+<pre><code class="language-solidity">uint256 baseAmount = 1000e18;
+uint256 liqThreshold = 8500; // 85%
+<p>// Preview: 1,050e18
+uint256 previewResult = baseAmount * 105 / 100;</p>
+<p>// Actual: 1,176e18
+uint256 actualResult = baseAmount * 10000 / 8500;</p>
+<p>// Discrepancy: 126e18 (12.6% gap!)</code></pre></p>
+<h3>Step 4: Build a Proof-of-Concept Test</h3>
+Write a Foundry test that calls BOTH functions and asserts they match:
+<pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+<p>import {Test} from "forge-std/Test.sol";</p>
+<p>contract PreviewMismatchTest is Test {
+    Protocol protocol;</p>
+<p>function setUp() public {
+        protocol = new Protocol();
+    }</p>
+<p>function testPreviewMatchesActual() public {
+        uint256 amount = 1000e18;</p>
+<p>uint256 previewResult = protocol.calculateUnwindParams(amount);
+        uint256 actualResult = protocol.executeUnwind(amount);</p>
+<p>// Assert they match within 1% tolerance
+        uint256 tolerance = amount * 1 / 100;
+        assertApproxEqAbs(
+            previewResult, 
+            actualResult, 
+            tolerance, 
+            "Preview and actual differ by more than 1%"
+        );
+    }
+}</code></pre></p>
+<p>If the test fails with a 12% gap, you've confirmed the bug.</p>
+<h2>Prevention Patterns</h2>
+<h3>Pattern 1: Single Source of Truth</h3>
+Refactor so preview and actual call the SAME internal calculation function.
+<pre><code class="language-solidity">contract SecureProtocol {
+    // Internal function: single source of truth
+    function _calculateFlashLoan(uint256 baseAmount) 
+        internal 
+        view 
+        returns (uint256) 
+    {
+        return baseAmount * 10000 / liqThreshold;
+    }
+<p>// Preview function calls internal
+    function calculateUnwindParams(uint256 amount) 
+        public 
+        view 
+        returns (uint256) 
+    {
+        return _calculateFlashLoan(amount);
+    }</p>
+<p>// Actual execution calls SAME internal function
+    function executeUnwind(uint256 amount) external {
+        uint256 flashLoan = _calculateFlashLoan(amount);
+        // ... perform state changes
+    }
+}</code></pre></p>
+<strong>Result:</strong> Preview and actual are mathematically identical.
+<h3>Pattern 2: Document and Bound Discrepancies</h3>
+If different safety margins are intentional, <strong>document it clearly and bound the maximum deviation.</strong>
+<pre><code class="language-solidity">contract TransparentProtocol {
+    uint256 public constant MAX_DEVIATION = 200; // 2% max
+<p>function calculateUnwindParams(uint256 amount) 
+        public 
+        view 
+        returns (uint256 estimated, uint256 maxActual) 
+    {
+        uint256 baseCalc = amount * 10000 / liqThreshold;
+        estimated = baseCalc;
+        maxActual = baseCalc * (10000 + MAX_DEVIATION) / 10000;
+        return (estimated, maxActual);
+    }</p>
+<p>function executeUnwind(uint256 amount) external {
+        (uint256 estimated, uint256 maxActual) = calculateUnwindParams(amount);
+        uint256 actual = /* real execution logic */;
+        
+        require(actual <= maxActual, "Execution exceeded preview max bound");
+    }
+}</code></pre></p>
+<strong>Result:</strong> Users see both the estimate AND the worst-case upper bound.
+<h3>Pattern 3: Automated Testing in CI/CD</h3>
+Add automated tests that run on every commit:
+<pre><code class="language-solidity">contract FuzzPreviewConsistency is Test {
+    function testFuzz_PreviewMatchesActual(uint256 amount) public {
+        amount = bound(amount, 1e18, 1_000_000e18);
+<p>uint256 preview = protocol.calculateUnwind(amount);
+        uint256 actual = protocol.executeUnwind(amount);</p>
+<p>assertApproxEqRel(preview, actual, 0.01e18); // 1% tolerance
+    }
+}</code></pre></p>
+<p>Run with <code>forge test --fuzz-runs 10000</code> to catch discrepancies across edge cases.</p>
+<h2>When is a Discrepancy Acceptable?</h2>
+<p>Not all preview-vs-actual gaps are bugs. Legitimate cases include:</p>
+<p>1. <strong>Slippage Protection</strong> — Preview shows 100 tokens, actual allows 98-102 (2% tolerance)
+2. <strong>Gas Estimation</strong> — Preview estimates gas, actual may vary slightly
+3. <strong>Time-Dependent Calculations</strong> — Interest accrual between preview and actual (documented and bounded)</p>
+<strong>Key principle:</strong> If the deviation is <strong>documented</strong>, <strong>bounded</strong> (<2%), and <strong>necessary</strong> for security, it's a design choice. If it's <strong>undocumented</strong>, <strong>unbounded</strong>, or <strong>unnecessary</strong> — it's a vulnerability.
+<h2>Severity Assessment</h2>
+<p>| Deviation | User Impact | Economic Risk | Severity |
+|-----------|-------------|---------------|----------|
+| <1% | Minor UX friction | Negligible | <strong>LOW</strong> |
+| 1-5% | Moderate UX friction | Small economic loss | <strong>MEDIUM</strong> |
+| 5-20% | Transaction failures | Moderate loss or liquidation risk | <strong>HIGH</strong> |
+| >20% | Total failure | Severe loss or exploit vector | <strong>CRITICAL</strong> |</p>
+<p>A 12% gap falls into the <strong>HIGH</strong> category — users experience unexpected outcomes, and liquidation risk increases.</p>
+<h2>Real-World Prevalence</h2>
+<p>This pattern appears in:
+<li><strong>Vaults</strong> — Deposit/withdraw previews vs actual share calculations</li>
+<li><strong>Lending Protocols</strong> — Borrow limit previews vs actual liquidation math</li>
+<li><strong>DEX Aggregators</strong> — Swap quotes vs actual execution slippage</li>
+<li><strong>Staking Protocols</strong> — Reward previews vs actual distribution</li></p>
+<p>We've seen this in:
+<li>ERC-4626 vaults with rounding discrepancies (preview rounds down, actual rounds up)</li>
+<li>Aave-style lending where health factor preview doesn't match liquidation trigger</li>
+<li>Uniswap V3 range order previews that don't account for tick spacing</li></ul></p>
+<h2>Key Takeaways</h2>
+<p>1. <strong>Preview and actual functions MUST use the same calculation logic</strong> — refactor to a shared internal function
+2. <strong>If discrepancies are intentional, document and bound them</strong> — return both estimate and max/min bounds
+3. <strong>Always test preview vs actual with realistic and extreme inputs</strong> — fuzz testing catches edge cases
+4. <strong>Users trust previews to make informed decisions</strong> — breaking that trust is a UX and security failure
+5. <strong>Add this to your audit checklist</strong> — grep for <code>calculate*</code> and <code>preview*</code>, then trace to execution functions
+6. <strong>Severity scales with deviation size and user impact</strong> — >10% gaps are HIGH severity</p>
+<p>The next time you review a protocol, ask: "Do the preview functions tell the truth?" If not, you've found a bug — even if the code "works." Truth in interfaces is security.</p>
+<p>---</p>
+<strong>Disclaimer:</strong> This analysis is based on security research patterns observed across multiple DeFi protocols and is for educational purposes.
+        </article>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-solidity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+</body>
+</html>
