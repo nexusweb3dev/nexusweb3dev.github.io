@@ -3,273 +3,801 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered token security scans for meme tokens on Solana, Ethereum, BSC, Base, and Arbitrum. Fast, affordable, professional security analysis starting at $300.">
-    <title>Token Security Scans | NexusWeb3</title>
+    <title>Token Security Analysis | NexusWeb3</title>
+    <meta name="description" content="AI-powered on-chain security checks. Professional reports in hours, not weeks. Starting at $300.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #0f0f14;
+            --bg-tertiary: #1a1a1f;
+            --border: #262630;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3b8;
+            --text-tertiary: #737383;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        
         header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        nav a.active {
+            color: var(--text-primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* SECTION 1: HERO */
+        .hero {
+            padding: 8rem 0 4rem;
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #00d4ff;
-            margin-bottom: 40px;
         }
-        h1 {
-            font-size: 2.5em;
-            color: #00d4ff;
-            margin-bottom: 10px;
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
         }
-        .tagline {
-            font-size: 1.3em;
-            color: #aaa;
+        
+        .hero .accent {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        .cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+        
+        /* SECTION 2: TRUST BAR (stats) */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+        
+        .stat {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* SECTION 3: WHAT WE CHECK */
+        section {
+            margin-bottom: 6rem;
+        }
+        
         h2 {
-            color: #00d4ff;
-            font-size: 1.8em;
-            margin: 40px 0 20px 0;
-            border-left: 4px solid #00d4ff;
-            padding-left: 15px;
-        }
-        h3 {
-            color: #00aaff;
-            font-size: 1.3em;
-            margin: 25px 0 15px 0;
-        }
-        p, li {
-            margin-bottom: 15px;
-            font-size: 1.05em;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        .check-list {
-            list-style: none;
-            margin-left: 0;
-        }
-        .check-list li:before {
-            content: "✅ ";
-            margin-right: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #333;
-        }
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid #333;
-        }
-        th {
-            background: #00d4ff;
-            color: #0a0a0f;
-            font-weight: bold;
-        }
-        .cta-box {
-            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-            color: #0a0a0f;
-            padding: 30px;
-            border-radius: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
             text-align: center;
-            margin: 40px 0;
-            font-weight: bold;
+            margin-bottom: 3rem;
         }
-        .cta-box h2 {
-            color: #0a0a0f;
-            border: none;
-            margin: 0 0 15px 0;
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .feature-card ul {
+            list-style: none;
             padding: 0;
         }
-        .cta-box a {
-            color: #0a0a0f;
-            text-decoration: underline;
-            font-size: 1.2em;
+        
+        .feature-card li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
         }
-        .faq {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-left: 4px solid #00aaff;
-            margin: 20px 0;
+        
+        .feature-card li:last-child {
+            border-bottom: none;
         }
-        .faq strong {
-            color: #00d4ff;
+        
+        .feature-card li:before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
-        footer {
+        
+        /* SECTION 4: PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .pricing-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #333;
-            margin-top: 60px;
+            transition: all 0.3s;
         }
-        .disclaimer {
-            background: rgba(255, 100, 100, 0.1);
-            border-left: 4px solid #ff6666;
-            padding: 15px;
-            margin: 30px 0;
-            font-size: 0.95em;
+        
+        .pricing-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--accent-blue);
+            position: relative;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        
+        .pricing-tier {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-period {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        /* SECTION 5: PROCESS */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .process-step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .process-step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* SECTION 6: SAMPLE SHOWCASE */
+        .showcase-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .showcase-box h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        .code-block {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+        
+        .code-block .green {
+            color: var(--accent-green);
+        }
+        
+        .code-block .red {
+            color: #ef4444;
+        }
+        
+        .code-block .blue {
+            color: var(--accent-blue);
+        }
+        
+        /* SECTION 7: FAQ */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* SECTION 8: CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .final-cta .btn-white {
+            background: white;
+            color: var(--bg-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .final-cta .btn-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 6rem;
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        footer p {
+            color: var(--text-tertiary);
+        }
+        
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        footer a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-row {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>⚡ AI-Powered Token Security Scans</h1>
-            <p class="tagline">Fast. Affordable. Trustworthy.</p>
-        </header>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog/">Research</a>
+                <a href="/about.html">About</a>
+                <a href="/methodology.html">Methodology</a>
+                <a href="/token-security-scan.html" class="active">Token Scan</a>
+            </nav>
+        </div>
+    </header>
 
-        <section>
-            <h2>Why Your Token Needs a Security Scan</h2>
-            <p>Launching a meme token on Solana, Base, or BSC? <strong>Your community needs proof it's not a rug pull.</strong></p>
-            <p>Traditional audits cost $6,000-$10,000 and take weeks. Most meme tokens can't afford that.</p>
-            <p><strong>NexusWeb3 provides AI-powered security scans in hours, not weeks — starting at $300.</strong></p>
+    <main class="container">
+        <!-- SECTION 1: HERO -->
+        <section class="hero">
+            <h1>Token Security <span class="accent">Analysis</span></h1>
+            <p>AI-powered on-chain security checks. Professional reports in hours, not weeks.</p>
+            <div class="cta-row">
+                <a href="#order" class="btn-primary">Get Your Scan</a>
+                <a href="#showcase" class="btn-secondary">See Sample Report</a>
+            </div>
         </section>
 
-        <section>
-            <h2>What We Check</h2>
-
-            <h3>✅ EVM Tokens (Ethereum, BSC, Base, Arbitrum)</h3>
-            <ul class="check-list">
-                <li><strong>Ownership & Control:</strong> Owner renounced? Upgradeable proxy? Pause/blacklist mechanisms?</li>
-                <li><strong>Tokenomics:</strong> Mint function capped or unlimited? Transfer tax modifiable? Liquidity locked? Holder concentration (whale risk)</li>
-                <li><strong>Security Tests:</strong> Honeypot test (can you sell after buying?) Source code verified? Known vulnerability patterns</li>
-            </ul>
-
-            <h3>✅ Solana Tokens (SPL + Pump.fun Graduates)</h3>
-            <ul class="check-list">
-                <li><strong>Mint & Freeze Authority:</strong> Mint authority revoked? (supply fixed?) Freeze authority revoked? (no wallet freezing?)</li>
-                <li><strong>Token Program:</strong> Standard SPL Token or Token-2022? Dangerous extensions? (transfer hooks, permanent delegate)</li>
-                <li><strong>Liquidity & Distribution:</strong> LP burned or locked on Raydium/Orca? Metadata update authority status. Holder concentration</li>
-            </ul>
+        <!-- SECTION 2: TRUST BAR -->
+        <section class="stats">
+            <div class="stat">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Blockchains Supported</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30min</div>
+                <div class="stat-label">Fastest Turnaround</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">85+</div>
+                <div class="stat-label">Security Checks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$300</div>
+                <div class="stat-label">Starting Price</div>
+            </div>
         </section>
 
-        <section>
+        <!-- SECTION 3: WHAT WE CHECK -->
+        <section id="features">
+            <h2>Comprehensive Security Checks</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>✅ EVM Tokens</h3>
+                    <ul>
+                        <li><strong>Ownership & Control:</strong> Owner renounced? Upgradeable proxy? Pause/blacklist mechanisms?</li>
+                        <li><strong>Tokenomics:</strong> Mint function capped or unlimited? Transfer tax modifiable? Liquidity locked?</li>
+                        <li><strong>Security Tests:</strong> Honeypot test (can you sell after buying?), Source code verified, Known vulnerability patterns</li>
+                        <li><strong>Holder Analysis:</strong> Whale concentration, Team allocation, LP ownership</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Solana Tokens</h3>
+                    <ul>
+                        <li><strong>Mint & Freeze Authority:</strong> Mint authority revoked? (supply fixed?), Freeze authority revoked? (no wallet freezing?)</li>
+                        <li><strong>Token Program:</strong> Standard SPL Token or Token-2022? Dangerous extensions? (transfer hooks, permanent delegate)</li>
+                        <li><strong>Liquidity & Distribution:</strong> LP burned or locked on Raydium/Orca, Metadata update authority status</li>
+                        <li><strong>On-Chain Analysis:</strong> Holder concentration, Top holder patterns, Rugcheck integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PRICING -->
+        <section id="pricing">
             <h2>Pricing Tiers</h2>
-            <table>
-                <tr>
-                    <th>Tier</th>
-                    <th>Price</th>
-                    <th>Turnaround</th>
-                    <th>What You Get</th>
-                </tr>
-                <tr>
-                    <td><strong>Quick Scan</strong></td>
-                    <td>$300-$500</td>
-                    <td>30 minutes</td>
-                    <td>Automated on-chain checks + risk score</td>
-                </tr>
-                <tr>
-                    <td><strong>Standard Review</strong></td>
-                    <td>$750-$1,000</td>
-                    <td>2-4 hours</td>
-                    <td>Automated checks + manual code review + detailed report</td>
-                </tr>
-                <tr>
-                    <td><strong>Premium + 7-Day Monitoring</strong></td>
-                    <td>$1,500-$2,000</td>
-                    <td>24 hours</td>
-                    <td>Full security analysis + PoC testing + 7-day post-launch monitoring</td>
-                </tr>
-            </table>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Quick Scan</div>
+                    <div class="pricing-amount">$300</div>
+                    <div class="pricing-period">30 minutes turnaround</div>
+                    <ul class="pricing-features">
+                        <li>Automated on-chain checks</li>
+                        <li>Risk score (0-100 scale)</li>
+                        <li>Red flags & green flags</li>
+                        <li>Markdown report</li>
+                        <li>Shareable with community</li>
+                    </ul>
+                    <a href="#order" class="btn-secondary">Get Started</a>
+                </div>
 
-            <h3>What's Included in Every Tier:</h3>
-            <ul class="check-list">
-                <li>Professional markdown report</li>
-                <li>Risk score (0-100 scale)</li>
-                <li>Red flags & green flags breakdown</li>
-                <li>Actionable recommendations</li>
-                <li>Shareable with your community</li>
-            </ul>
+                <div class="pricing-card featured">
+                    <div class="pricing-tier">Standard Review</div>
+                    <div class="pricing-amount">$750</div>
+                    <div class="pricing-period">2-4 hours turnaround</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Quick Scan</li>
+                        <li>Manual code review</li>
+                        <li>Detailed vulnerability analysis</li>
+                        <li>Liquidity lock verification</li>
+                        <li>Actionable recommendations</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#order" class="btn-primary">Most Popular</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-tier">Premium + Monitoring</div>
+                    <div class="pricing-amount">$1,500</div>
+                    <div class="pricing-period">24 hours turnaround</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Standard</li>
+                        <li>Full security analysis</li>
+                        <li>PoC testing if needed</li>
+                        <li>7-day post-launch monitoring</li>
+                        <li>Wallet activity tracking</li>
+                        <li>Dedicated analyst</li>
+                    </ul>
+                    <a href="#order" class="btn-secondary">Enterprise</a>
+                </div>
+            </div>
         </section>
 
-        <div class="cta-box">
+        <!-- SECTION 5: PROCESS -->
+        <section id="process">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>DM on Twitter @InfoNexusweb3 or Telegram with your token address and preferred tier.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Payment</h3>
+                    <p>50% upfront in SOL, ETH, USDC, or USDT. Secure and transparent.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Analysis</h3>
+                    <p>We run 85+ security checks, manual code review, and generate your report.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>Receive professional markdown report. Pay remaining 50%. Share with your community.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: SAMPLE SHOWCASE -->
+        <section id="showcase">
+            <h2>Sample Report Output</h2>
+            <div class="showcase-box">
+                <h3>Example: Token Security Scan Report</h3>
+                <div class="code-block">
+<span class="blue">## SECURITY SCAN REPORT</span>
+<span class="blue">Token:</span> MEME (0x1234...abcd)
+<span class="blue">Chain:</span> Base
+<span class="blue">Risk Score:</span> <span class="green">78/100 (LOW RISK)</span>
+
+<span class="blue">### GREEN FLAGS ✅</span>
+<span class="green">✓ Owner renounced — no admin control</span>
+<span class="green">✓ Mint function disabled — supply fixed</span>
+<span class="green">✓ Liquidity locked for 6 months on Uniswap V3</span>
+<span class="green">✓ Source code verified on Basescan</span>
+<span class="green">✓ Honeypot test PASSED — sell works</span>
+
+<span class="blue">### RED FLAGS 🚨</span>
+<span class="red">⚠ Top 10 holders own 42% of supply — whale risk</span>
+<span class="red">⚠ No transfer tax but contract allows pause (check if renounced)</span>
+
+<span class="blue">### VERDICT</span>
+Low-risk launch. Main concern: holder concentration.
+Recommendation: Monitor whale wallets for 7 days post-launch.
+                </div>
+                <p style="color: var(--text-secondary);">This is a simplified example. Real reports include full code references, transaction links, and actionable next steps.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FAQ -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Is this a full audit?</h3>
+                    <p>No. This is a security scan using automated tools + manual review. For high-value protocols (>$1M TVL), we recommend a traditional audit firm like CertiK or Hacken. For meme tokens and new launches, our scans provide fast, affordable security validation.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if you find a critical bug?</h3>
+                    <p>We report it to you FIRST before delivery. You fix it, then we re-scan for free. We never publish bugs without your permission.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use your report for marketing?</h3>
+                    <p>Yes. You can share the report with your community. We also provide a "Scanned by NexusWeb3" badge you can add to your website.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What chains do you support?</h3>
+                    <p>Currently: Ethereum, BSC, Base, Arbitrum, Solana. Coming soon: Polygon, Avalanche, Fantom.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is this different from free scanners like RugCheck?</h3>
+                    <p>Free scanners check basic on-chain data (mint authority, freeze authority). We add: manual code review (Standard/Premium tiers), liquidity lock verification, honeypot testing, holder concentration analysis, AI-powered pattern matching against known exploits, and professional reports with actionable recommendations.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>SOL, ETH, USDC, USDT. 50% upfront, 50% on delivery. All payments are transparent and on-chain.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: FINAL CTA -->
+        <section id="order" class="final-cta">
             <h2>Ready to Scan Your Token?</h2>
-            <p>DM us on Twitter: <a href="https://twitter.com/InfoNexusweb3" target="_blank">@InfoNexusweb3</a></p>
-            <p>Or Telegram: @InfoNexusweb3</p>
+            <p>Join projects that trust AI-powered security analysis. Fast, affordable, professional.</p>
+            <a href="https://twitter.com/InfoNexusweb3" target="_blank" class="btn-white">Order Your Scan →</a>
+            <p style="margin-top: 1.5rem; font-size: 1rem;">Or contact us on Telegram: @InfoNexusweb3</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Independent Security Research</p>
+            <a href="https://twitter.com/InfoNexusweb3" target="_blank">@InfoNexusweb3</a>
         </div>
-
-        <section>
-            <h2>How to Order</h2>
-            <ol>
-                <li><strong>Contact us:</strong> Twitter DM <a href="https://twitter.com/InfoNexusweb3" target="_blank">@InfoNexusweb3</a> or Telegram @InfoNexusweb3</li>
-                <li><strong>Provide:</strong> Blockchain (Ethereum, BSC, Base, Arbitrum, Solana), Token contract address, Preferred tier (Quick / Standard / Premium)</li>
-                <li><strong>Payment:</strong> Accepted: SOL, ETH, USDC, USDT. 50% upfront, 50% on delivery</li>
-                <li><strong>Receive scan report:</strong> Quick Scan: 30 min | Standard Review: 2-4 hours | Premium: 24 hours</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>FAQ</h2>
-
-            <div class="faq">
-                <p><strong>Q: Is this a full audit?</strong></p>
-                <p>A: No. This is a <strong>security scan</strong> using automated tools + manual review. For high-value protocols (>$1M TVL), we recommend a traditional audit firm like CertiK or Hacken. For meme tokens and new launches, our scans provide fast, affordable security validation.</p>
-            </div>
-
-            <div class="faq">
-                <p><strong>Q: What if you find a critical bug?</strong></p>
-                <p>A: We report it to you FIRST before delivery. You fix it, then we re-scan for free. We never publish bugs without your permission.</p>
-            </div>
-
-            <div class="faq">
-                <p><strong>Q: Do you audit Solidity code line-by-line?</strong></p>
-                <p>A: Standard tier includes pattern-based manual review (known exploit types). Premium tier includes deeper manual analysis and PoC testing if needed.</p>
-            </div>
-
-            <div class="faq">
-                <p><strong>Q: Can I use your report for marketing?</strong></p>
-                <p>A: Yes. You can share the report with your community. We also provide a "Scanned by NexusWeb3" badge you can add to your website.</p>
-            </div>
-
-            <div class="faq">
-                <p><strong>Q: What chains do you support?</strong></p>
-                <p>A: Currently: Ethereum, BSC, Base, Arbitrum, Solana. Coming soon: Polygon, Avalanche, Fantom.</p>
-            </div>
-
-            <div class="faq">
-                <p><strong>Q: How is this different from free scanners like RugCheck?</strong></p>
-                <p>A: Free scanners check basic on-chain data (mint authority, freeze authority). We add: Manual code review (Standard/Premium tiers), Liquidity lock verification, Honeypot testing, Holder concentration analysis, AI-powered pattern matching against known exploits, Professional report with actionable recommendations.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Who We Are</h2>
-            <p><strong>NexusWeb3</strong> is an AI-powered security research firm specializing in smart contract audits and bug bounties.</p>
-            <ul class="check-list">
-                <li>Active on Immunefi, Sherlock, Code4rena</li>
-                <li>AI-assisted deep-dive analysis using OATHV methodology</li>
-                <li>Fast turnaround without sacrificing quality</li>
-                <li>Transparent risk scoring system</li>
-            </ul>
-            <p>We analyze multi-million dollar DeFi protocols. Now we're bringing that expertise to meme tokens — at prices new projects can afford.</p>
-        </section>
-
-        <div class="disclaimer">
-            <strong>Disclaimer:</strong> This is a security scan, not a comprehensive audit. It checks on-chain properties and known vulnerability patterns. It is NOT financial advice. No warranty is provided. Smart contracts may contain risks not detectable by automated analysis. Users should conduct their own research.
-        </div>
-
-        <footer>
-            <p><strong>NexusWeb3</strong> | AI-Powered Security Research</p>
-            <p>Twitter: <a href="https://twitter.com/InfoNexusweb3" target="_blank" style="color: #00d4ff;">@InfoNexusweb3</a></p>
-            <p>Last updated: February 13, 2026</p>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>

@@ -32,5 +32,25 @@
 - Twitter: 1/3 (Fortress partial, need 2 more threads this week)
 
 **Ready for next publish:**
-- Blog: Yo Protocol + Step Finance
-- Twitter: TrueBit + Reentrancy + Gas Optimization + Makina
+- Blog: Yo Protocol
+- Blog: Step Finance
+- Blog: OKX DEX Router Audit Insights (Drafted: 2026-02-14)
+- Twitter: TrueBit
+- Twitter: Reentrancy
+- Twitter: Gas Optimization
+- Twitter: Makina
+- Twitter: OKX DEX Router Audit Insights (Drafted: 2026-02-14)
+2026-02-14 PUBLISHED: why-your-meme-token-needs-a-security-scan (blog)
+
+## February 2026
+
+| # | Title | Status | Draft Date | Publish Date | Slug | Author |
+|---|-------|--------|------------|-------------|------|--------|
+| 1 | The Anatomy of a Bridge Hack | DRAFT | 2026-02-14 | TBD | anatomy-bridge-hack | ATLAS |
+
+**Notes:**
+- Post #1 covers Saga $7M exploit + $1.85B bridge exploit history
+- Foundational series #2 (total 8 planned in series)
+- Word count: ~5,200 words
+- Code examples: 8 Solidity snippets
+- Ready for ORACLE/NEXUS review + publishing
