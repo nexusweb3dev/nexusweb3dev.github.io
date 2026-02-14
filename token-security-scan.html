@@ -626,7 +626,7 @@
             <h2>Comprehensive Security Checks</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>✅ EVM Tokens</h3>
+                    <h3>EVM Tokens</h3>
                     <ul>
                         <li><strong>Ownership & Control:</strong> Owner renounced? Upgradeable proxy? Pause/blacklist mechanisms?</li>
                         <li><strong>Tokenomics:</strong> Mint function capped or unlimited? Transfer tax modifiable? Liquidity locked?</li>
@@ -635,7 +635,7 @@
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <h3>✅ Solana Tokens</h3>
+                    <h3>Solana Tokens</h3>
                     <ul>
                         <li><strong>Mint & Freeze Authority:</strong> Mint authority revoked? (supply fixed?), Freeze authority revoked? (no wallet freezing?)</li>
                         <li><strong>Token Program:</strong> Standard SPL Token or Token-2022? Dangerous extensions? (transfer hooks, permanent delegate)</li>
@@ -734,16 +734,16 @@
 <span class="blue">Chain:</span> Base
 <span class="blue">Risk Score:</span> <span class="green">78/100 (LOW RISK)</span>
 
-<span class="blue">### GREEN FLAGS ✅</span>
-<span class="green">✓ Owner renounced — no admin control</span>
-<span class="green">✓ Mint function disabled — supply fixed</span>
-<span class="green">✓ Liquidity locked for 6 months on Uniswap V3</span>
-<span class="green">✓ Source code verified on Basescan</span>
-<span class="green">✓ Honeypot test PASSED — sell works</span>
+<span class="blue">### GREEN FLAGS</span>
+<span class="green">[PASS] Owner renounced — no admin control</span>
+<span class="green">[PASS] Mint function disabled — supply fixed</span>
+<span class="green">[PASS] Liquidity locked for 6 months on Uniswap V3</span>
+<span class="green">[PASS] Source code verified on Basescan</span>
+<span class="green">[PASS] Honeypot test PASSED — sell works</span>
 
-<span class="blue">### RED FLAGS 🚨</span>
-<span class="red">⚠ Top 10 holders own 42% of supply — whale risk</span>
-<span class="red">⚠ No transfer tax but contract allows pause (check if renounced)</span>
+<span class="blue">### RED FLAGS</span>
+<span class="red">[WARN] Top 10 holders own 42% of supply — whale risk</span>
+<span class="red">[WARN] No transfer tax but contract allows pause (check if renounced)</span>
 
 <span class="blue">### VERDICT</span>
 Low-risk launch. Main concern: holder concentration.
