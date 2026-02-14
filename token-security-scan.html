@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered token security scans for meme tokens on Solana, Ethereum, BSC, Base, and Arbitrum. Fast, affordable, professional security analysis starting at $300.">
+    <title>Token Security Scans | NexusWeb3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #00d4ff;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.3em;
+            color: #aaa;
+        }
+        h2 {
+            color: #00d4ff;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            border-left: 4px solid #00d4ff;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #00aaff;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+        p, li {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .check-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .check-list li:before {
+            content: "✅ ";
+            margin-right: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #333;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #333;
+        }
+        th {
+            background: #00d4ff;
+            color: #0a0a0f;
+            font-weight: bold;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
+            color: #0a0a0f;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            font-weight: bold;
+        }
+        .cta-box h2 {
+            color: #0a0a0f;
+            border: none;
+            margin: 0 0 15px 0;
+            padding: 0;
+        }
+        .cta-box a {
+            color: #0a0a0f;
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+        .faq {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-left: 4px solid #00aaff;
+            margin: 20px 0;
+        }
+        .faq strong {
+            color: #00d4ff;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+        .disclaimer {
+            background: rgba(255, 100, 100, 0.1);
+            border-left: 4px solid #ff6666;
+            padding: 15px;
+            margin: 30px 0;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ AI-Powered Token Security Scans</h1>
+            <p class="tagline">Fast. Affordable. Trustworthy.</p>
+        </header>
+
+        <section>
+            <h2>Why Your Token Needs a Security Scan</h2>
+            <p>Launching a meme token on Solana, Base, or BSC? <strong>Your community needs proof it's not a rug pull.</strong></p>
+            <p>Traditional audits cost $6,000-$10,000 and take weeks. Most meme tokens can't afford that.</p>
+            <p><strong>NexusWeb3 provides AI-powered security scans in hours, not weeks — starting at $300.</strong></p>
+        </section>
+
+        <section>
+            <h2>What We Check</h2>
+
+            <h3>✅ EVM Tokens (Ethereum, BSC, Base, Arbitrum)</h3>
+            <ul class="check-list">
+                <li><strong>Ownership & Control:</strong> Owner renounced? Upgradeable proxy? Pause/blacklist mechanisms?</li>
+                <li><strong>Tokenomics:</strong> Mint function capped or unlimited? Transfer tax modifiable? Liquidity locked? Holder concentration (whale risk)</li>
+                <li><strong>Security Tests:</strong> Honeypot test (can you sell after buying?) Source code verified? Known vulnerability patterns</li>
+            </ul>
+
+            <h3>✅ Solana Tokens (SPL + Pump.fun Graduates)</h3>
+            <ul class="check-list">
+                <li><strong>Mint & Freeze Authority:</strong> Mint authority revoked? (supply fixed?) Freeze authority revoked? (no wallet freezing?)</li>
+                <li><strong>Token Program:</strong> Standard SPL Token or Token-2022? Dangerous extensions? (transfer hooks, permanent delegate)</li>
+                <li><strong>Liquidity & Distribution:</strong> LP burned or locked on Raydium/Orca? Metadata update authority status. Holder concentration</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pricing Tiers</h2>
+            <table>
+                <tr>
+                    <th>Tier</th>
+                    <th>Price</th>
+                    <th>Turnaround</th>
+                    <th>What You Get</th>
+                </tr>
+                <tr>
+                    <td><strong>Quick Scan</strong></td>
+                    <td>$300-$500</td>
+                    <td>30 minutes</td>
+                    <td>Automated on-chain checks + risk score</td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Review</strong></td>
+                    <td>$750-$1,000</td>
+                    <td>2-4 hours</td>
+                    <td>Automated checks + manual code review + detailed report</td>
+                </tr>
+                <tr>
+                    <td><strong>Premium + 7-Day Monitoring</strong></td>
+                    <td>$1,500-$2,000</td>
+                    <td>24 hours</td>
+                    <td>Full security analysis + PoC testing + 7-day post-launch monitoring</td>
+                </tr>
+            </table>
+
+            <h3>What's Included in Every Tier:</h3>
+            <ul class="check-list">
+                <li>Professional markdown report</li>
+                <li>Risk score (0-100 scale)</li>
+                <li>Red flags & green flags breakdown</li>
+                <li>Actionable recommendations</li>
+                <li>Shareable with your community</li>
+            </ul>
+        </section>
+
+        <div class="cta-box">
+            <h2>Ready to Scan Your Token?</h2>
+            <p>DM us on Twitter: <a href="https://twitter.com/InfoNexusweb3" target="_blank">@InfoNexusweb3</a></p>
+            <p>Or Telegram: @InfoNexusweb3</p>
+        </div>
+
+        <section>
+            <h2>How to Order</h2>
+            <ol>
+                <li><strong>Contact us:</strong> Twitter DM <a href="https://twitter.com/InfoNexusweb3" target="_blank">@InfoNexusweb3</a> or Telegram @InfoNexusweb3</li>
+                <li><strong>Provide:</strong> Blockchain (Ethereum, BSC, Base, Arbitrum, Solana), Token contract address, Preferred tier (Quick / Standard / Premium)</li>
+                <li><strong>Payment:</strong> Accepted: SOL, ETH, USDC, USDT. 50% upfront, 50% on delivery</li>
+                <li><strong>Receive scan report:</strong> Quick Scan: 30 min | Standard Review: 2-4 hours | Premium: 24 hours</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+
+            <div class="faq">
+                <p><strong>Q: Is this a full audit?</strong></p>
+                <p>A: No. This is a <strong>security scan</strong> using automated tools + manual review. For high-value protocols (>$1M TVL), we recommend a traditional audit firm like CertiK or Hacken. For meme tokens and new launches, our scans provide fast, affordable security validation.</p>
+            </div>
+
+            <div class="faq">
+                <p><strong>Q: What if you find a critical bug?</strong></p>
+                <p>A: We report it to you FIRST before delivery. You fix it, then we re-scan for free. We never publish bugs without your permission.</p>
+            </div>
+
+            <div class="faq">
+                <p><strong>Q: Do you audit Solidity code line-by-line?</strong></p>
+                <p>A: Standard tier includes pattern-based manual review (known exploit types). Premium tier includes deeper manual analysis and PoC testing if needed.</p>
+            </div>
+
+            <div class="faq">
+                <p><strong>Q: Can I use your report for marketing?</strong></p>
+                <p>A: Yes. You can share the report with your community. We also provide a "Scanned by NexusWeb3" badge you can add to your website.</p>
+            </div>
+
+            <div class="faq">
+                <p><strong>Q: What chains do you support?</strong></p>
+                <p>A: Currently: Ethereum, BSC, Base, Arbitrum, Solana. Coming soon: Polygon, Avalanche, Fantom.</p>
+            </div>
+
+            <div class="faq">
+                <p><strong>Q: How is this different from free scanners like RugCheck?</strong></p>
+                <p>A: Free scanners check basic on-chain data (mint authority, freeze authority). We add: Manual code review (Standard/Premium tiers), Liquidity lock verification, Honeypot testing, Holder concentration analysis, AI-powered pattern matching against known exploits, Professional report with actionable recommendations.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Who We Are</h2>
+            <p><strong>NexusWeb3</strong> is an AI-powered security research firm specializing in smart contract audits and bug bounties.</p>
+            <ul class="check-list">
+                <li>Active on Immunefi, Sherlock, Code4rena</li>
+                <li>AI-assisted deep-dive analysis using OATHV methodology</li>
+                <li>Fast turnaround without sacrificing quality</li>
+                <li>Transparent risk scoring system</li>
+            </ul>
+            <p>We analyze multi-million dollar DeFi protocols. Now we're bringing that expertise to meme tokens — at prices new projects can afford.</p>
+        </section>
+
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This is a security scan, not a comprehensive audit. It checks on-chain properties and known vulnerability patterns. It is NOT financial advice. No warranty is provided. Smart contracts may contain risks not detectable by automated analysis. Users should conduct their own research.
+        </div>
+
+        <footer>
+            <p><strong>NexusWeb3</strong> | AI-Powered Security Research</p>
+            <p>Twitter: <a href="https://twitter.com/InfoNexusweb3" target="_blank" style="color: #00d4ff;">@InfoNexusweb3</a></p>
+            <p>Last updated: February 13, 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
