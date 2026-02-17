@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAURA Discord Bot — Case Study | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="176K+ lines of code. 6+ AI agents with LangChain orchestration, FastAPI backend, and deep Discord integration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="../portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="../methodology.html" class="nav__link">Methodology</a>
+                <a href="../pricing.html" class="nav__link">Pricing</a>
+                <a href="../about.html" class="nav__link">About</a>
+                <a href="../contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container--narrow">
+                <div class="breadcrumb">
+                    <a href="../portfolio.html">Portfolio</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>NAURA Discord Bot</span>
+                </div>
+                <h1>NAURA Discord Bot</h1>
+                <p class="case-hero__tagline">A 176K-line AI-powered Discord bot with 6+ specialized agents, LangChain orchestration, and a modular plugin architecture.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container--narrow">
+                <div class="case-section">
+                    <h2>The Problem</h2>
+                    <p>Discord communities need more than simple command bots. Server administrators want intelligent automation: content moderation that understands context, conversational AI that remembers history, community analytics, automated workflows, and integrations with external services.</p>
+                    <p>Building all of this into a single monolithic bot creates a maintenance nightmare. Features step on each other, updates risk breaking unrelated functionality, and scaling individual features independently becomes impossible.</p>
+                    <p>We needed a bot architecture that could handle complex AI-powered features while remaining modular, testable, and extensible — where adding a new capability would not risk breaking existing ones.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Our Solution</h2>
+                    <p>NAURA is built with a modular plugin architecture where each major feature is an independent module with its own AI agent. LangChain orchestrates the AI interactions, providing memory management, tool use, and chain-of-thought reasoning for each agent.</p>
+                    <p>A FastAPI backend handles persistent storage, analytics, and admin operations separate from the Discord event loop. This separation means the bot stays responsive to Discord events while heavy AI processing happens asynchronously.</p>
+                    <p>At 176K+ lines of code, this is our largest project — demonstrating the ability to maintain code quality, test coverage, and architectural consistency at significant scale.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Tech Stack</h2>
+                    <div class="badges" style="gap: 0.75rem;">
+                        <span class="badge">Python</span>
+                        <span class="badge--violet badge">LangChain</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge--green badge">Discord.py</span>
+                        <span class="badge--orange badge">6+ Agents</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">Redis</span>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h4>6+ AI Agents</h4>
+                            <p>Specialized agents for conversation, moderation, analytics, content generation, community management, and custom workflows — each with its own LangChain memory.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>LangChain Orchestration</h4>
+                            <p>Chain-of-thought reasoning, tool use, conversation memory, and context management. Agents can use tools, access databases, and make multi-step decisions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Modular Plugin System</h4>
+                            <p>Each feature is an independent plugin with its own configuration, commands, event handlers, and tests. Hot-reloadable without restarting the bot.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>FastAPI Admin Backend</h4>
+                            <p>REST API for configuration, analytics dashboards, user management, and audit logs. Decoupled from the Discord event loop for reliability.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Contextual Moderation</h4>
+                            <p>AI-powered moderation that understands sarcasm, context, and community norms — not just keyword matching. Reduces false positives significantly.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Conversation Memory</h4>
+                            <p>Per-user and per-channel conversation history with configurable retention. The bot remembers context from previous interactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Results</h2>
+                    <div class="grid-3" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-card__number">176K+</div>
+                            <div class="stat-card__label">Lines of Code</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">6+</div>
+                            <div class="stat-card__label">AI Agents</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">&lt;500ms</div>
+                            <div class="stat-card__label">Response Time</div>
+                        </div>
+                    </div>
+                    <p>NAURA demonstrates that large-scale AI applications can maintain clean architecture and fast response times. The modular design means new features get added without regression risk, and individual agents can be upgraded independently.</p>
+                </div>
+
+                <div class="cta-banner mt-8">
+                    <h2>Need an AI-Powered Bot?</h2>
+                    <p>We build intelligent bots for Discord, Telegram, Slack, and custom platforms with real AI reasoning — not just keyword matching.</p>
+                    <a href="../contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

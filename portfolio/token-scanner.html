@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Security Scanner — Case Study | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="Multi-chain EVM + Solana token security scanner with automated PDF reports, honeypot detection, and on-chain risk analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="../portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="../methodology.html" class="nav__link">Methodology</a>
+                <a href="../pricing.html" class="nav__link">Pricing</a>
+                <a href="../about.html" class="nav__link">About</a>
+                <a href="../contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container--narrow">
+                <div class="breadcrumb">
+                    <a href="../portfolio.html">Portfolio</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>Token Security Scanner</span>
+                </div>
+                <h1>Token Security Scanner</h1>
+                <p class="case-hero__tagline">Automated multi-chain security scanning for EVM and Solana tokens — from contract analysis to PDF report in minutes.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container--narrow">
+                <div class="case-section">
+                    <h2>The Problem</h2>
+                    <p>The cryptocurrency space is flooded with new token launches daily. Many are legitimate projects, but a significant percentage contain malicious code: honeypots that prevent selling, hidden tax mechanisms, blacklist functions, and owner-controlled mint capabilities.</p>
+                    <p>Manual security analysis of each token contract takes 30-60 minutes for an experienced researcher. For businesses and investors evaluating dozens of tokens per week, this does not scale.</p>
+                    <p>Existing automated scanners provide basic pass/fail results without the context needed for informed decisions. The market needed a tool that could deliver detailed, readable security reports — not just raw data dumps.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Our Solution</h2>
+                    <p>We built a multi-chain token security scanner that analyzes contracts on Ethereum, BSC, Polygon, Arbitrum, Base, and Solana. The scanner combines on-chain data from block explorers, DEX analytics from DexScreener, and security APIs (GoPlus, Etherscan) into a comprehensive risk assessment.</p>
+                    <p>The system runs binary checks for known attack patterns — honeypot behavior, hidden mint functions, excessive tax, blacklist mechanisms, proxy upgrade risks, and liquidity manipulation. Results are compiled into professional PDF reports with clear risk ratings and actionable findings.</p>
+                    <p>The entire pipeline is automated: input a token address, wait 2-3 minutes, receive a formatted security report. Agents handle the scanning, analysis, and report generation without human intervention.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Tech Stack</h2>
+                    <div class="badges" style="gap: 0.75rem;">
+                        <span class="badge">Python</span>
+                        <span class="badge--green badge">Multi-Chain</span>
+                        <span class="badge--orange badge">GoPlus API</span>
+                        <span class="badge">Etherscan API</span>
+                        <span class="badge--violet badge">DexScreener</span>
+                        <span class="badge">Helius (Solana)</span>
+                        <span class="badge--green badge">PDF Generation</span>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h4>Multi-Chain Support</h4>
+                            <p>Ethereum, BSC, Polygon, Arbitrum, Base, and Solana. One tool covers the major chains where token launches happen.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Honeypot Detection</h4>
+                            <p>Simulates buy and sell transactions to detect tokens that allow buying but block selling — the most common scam pattern.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Automated PDF Reports</h4>
+                            <p>Professional formatted reports with risk scores, detailed findings, contract metadata, and DEX analytics — ready to share with clients.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>On-Chain Risk Analysis</h4>
+                            <p>Checks for hidden mint, excessive tax, blacklist functions, proxy upgradability, ownership renouncement, and liquidity lock status.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Results</h2>
+                    <div class="grid-3" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-card__number">6+</div>
+                            <div class="stat-card__label">Chains Supported</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">&lt;3min</div>
+                            <div class="stat-card__label">Scan Time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">10+</div>
+                            <div class="stat-card__label">Risk Checks</div>
+                        </div>
+                    </div>
+                    <p>The scanner reduces security evaluation time from 30-60 minutes per token to under 3 minutes. Reports are formatted for both technical and non-technical audiences, making them suitable for client delivery and internal decision-making.</p>
+                </div>
+
+                <div class="cta-banner mt-8">
+                    <h2>Need Custom Security Tooling?</h2>
+                    <p>We build automated analysis tools for blockchain, fintech, and compliance use cases.</p>
+                    <a href="../contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

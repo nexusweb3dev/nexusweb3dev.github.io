@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusWeb3 Operations Center — Case Study | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="9 autonomous AI agents running 24/7 on a VPS with real-time dashboard, Telegram integration, and automated CRM pipeline.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="../portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="../methodology.html" class="nav__link">Methodology</a>
+                <a href="../pricing.html" class="nav__link">Pricing</a>
+                <a href="../about.html" class="nav__link">About</a>
+                <a href="../contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container--narrow">
+                <div class="breadcrumb">
+                    <a href="../portfolio.html">Portfolio</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>NexusWeb3 Operations Center</span>
+                </div>
+                <h1>NexusWeb3 Operations Center</h1>
+                <p class="case-hero__tagline">9 autonomous AI agents running 24/7, coordinated through Telegram, with a real-time command dashboard and automated CRM pipeline.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container--narrow">
+                <div class="case-section">
+                    <h2>The Problem</h2>
+                    <p>Running a security research operation requires constant monitoring: scanning new targets, analyzing contracts, writing reports, tracking leads, managing client relationships, and publishing findings. Doing this manually limits throughput to whatever one person can handle in a day.</p>
+                    <p>The challenge was not building one AI agent — it was orchestrating multiple specialized agents that need to work together, share context, and operate autonomously around the clock without constant human supervision.</p>
+                    <p>We needed a system where we could issue a high-level directive (like "scan this protocol") and have the entire pipeline execute automatically — from initial analysis through report generation to lead tracking.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Our Solution</h2>
+                    <p>We built a multi-agent operations center deployed in Docker on a Hostinger VPS. Nine specialized AI agents handle different aspects of the operation, coordinated through a shared task board and cron scheduling system.</p>
+                    <p>The lead agent (ATLAS, powered by Claude Sonnet) handles complex security research and strategic decisions. Support agents (powered by Gemini models) handle target finding, contract analysis, report publishing, CRM management, and monitoring — each running on automated schedules.</p>
+                    <p>A custom Python dashboard provides real-time visibility into agent status, task progress, CRM pipeline, and system health. The CEO controls everything through Telegram messages that get routed to the right agent.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Tech Stack</h2>
+                    <div class="badges" style="gap: 0.75rem;">
+                        <span class="badge">Python</span>
+                        <span class="badge--violet badge">Claude AI</span>
+                        <span class="badge--green badge">Gemini AI</span>
+                        <span class="badge--orange badge">Docker</span>
+                        <span class="badge">Telegram API</span>
+                        <span class="badge--green badge">9 Agents</span>
+                        <span class="badge">Linux VPS</span>
+                        <span class="badge">Cron</span>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h4>9 Autonomous Agents</h4>
+                            <p>Lead researcher, target finder, contract analyzer, report publisher, CRM manager, monitoring, and more — each with defined roles and schedules.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Real-Time Dashboard</h4>
+                            <p>Custom Python HTTP server with SSE updates showing agent status, task board, CRM pipeline, outreach funnel, and system health metrics.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Telegram Command Interface</h4>
+                            <p>CEO sends directives via Telegram that get routed to the appropriate agent. Status reports come back through the same channel.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Automated CRM Pipeline</h4>
+                            <p>Lead discovery, scoring, outreach tracking, and conversion funnel — all managed by specialized agents with human approval gates.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>24/7 Docker Deployment</h4>
+                            <p>Containerized deployment with cron scheduling, health monitoring, auto-restart on failure, and git-based deployment pipeline.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Multi-Model Architecture</h4>
+                            <p>Premium model (Claude) for complex analysis, cost-effective models (Gemini) for routine tasks. Optimized for both quality and cost.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Results</h2>
+                    <div class="grid-3" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-card__number">9</div>
+                            <div class="stat-card__label">Active Agents</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">24/7</div>
+                            <div class="stat-card__label">Autonomous Operation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">15</div>
+                            <div class="stat-card__label">Daily Triggers</div>
+                        </div>
+                    </div>
+                    <p>The system runs 15 automated triggers per day at a cost of approximately $1-2/day. What previously required constant manual attention now operates autonomously, with the human operator only intervening for strategic decisions and final approvals.</p>
+                </div>
+
+                <div class="cta-banner mt-8">
+                    <h2>Need Autonomous AI Operations?</h2>
+                    <p>We build multi-agent systems that run your business processes 24/7 without constant supervision.</p>
+                    <a href="../contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

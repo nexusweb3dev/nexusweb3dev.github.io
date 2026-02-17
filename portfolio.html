@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="9+ production AI systems. Explore our portfolio of autonomous agents, SaaS platforms, 3D web apps, and security tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .portfolio-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-hover);
+            color: inherit;
+        }
+        .portfolio-card__header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .portfolio-card__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .portfolio-card__title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .portfolio-card__desc {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        .portfolio-card__link {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .portfolio-card--no-link {
+            opacity: 0.8;
+        }
+        .portfolio-card--no-link .portfolio-card__link {
+            color: var(--text-tertiary);
+        }
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="methodology.html" class="nav__link">Methodology</a>
+                <a href="pricing.html" class="nav__link">Pricing</a>
+                <a href="about.html" class="nav__link">About</a>
+                <a href="contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 3rem;">
+            <div class="container">
+                <h1>Our <span class="accent">Portfolio</span></h1>
+                <p>Real systems running in production. Each project solved a specific business problem with custom AI and automation.</p>
+            </div>
+        </section>
+
+        <section class="section--sm">
+            <div class="container">
+                <!-- Filter Tabs -->
+                <div class="filter-tabs" id="filters">
+                    <button class="filter-tabs__btn filter-tabs__btn--active" data-filter="all">All</button>
+                    <button class="filter-tabs__btn" data-filter="ai-agents">AI Agents</button>
+                    <button class="filter-tabs__btn" data-filter="web-apps">Web Apps</button>
+                    <button class="filter-tabs__btn" data-filter="automation">Automation</button>
+                    <button class="filter-tabs__btn" data-filter="bots">Bots</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid" id="portfolio-grid">
+                    <a href="portfolio/ultimate-media-agent.html" class="portfolio-card" data-tags="ai-agents automation">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); color: var(--accent-violet);">AI</div>
+                            <div class="portfolio-card__title">Ultimate Media Agent</div>
+                        </div>
+                        <p class="portfolio-card__desc">11 AI agents that automate social media content creation, scheduling, and analytics. Commercial product sold on Gumroad. Built with Next.js 14 and MongoDB.</p>
+                        <div class="badges">
+                            <span class="badge--violet badge">Next.js 14</span>
+                            <span class="badge">MongoDB</span>
+                            <span class="badge--green badge">11 Agents</span>
+                            <span class="badge--orange badge">Gumroad</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <a href="portfolio/invoiceflow.html" class="portfolio-card" data-tags="ai-agents web-apps automation">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: var(--accent-green);">IF</div>
+                            <div class="portfolio-card__title">InvoiceFlow</div>
+                        </div>
+                        <p class="portfolio-card__desc">Full SaaS platform with Turborepo monorepo architecture. Gemini OCR at 95%+ accuracy, Stripe billing, GDPR compliance, and 8 AI agents powering the 3D landing page and backend.</p>
+                        <div class="badges">
+                            <span class="badge--green badge">Turborepo</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge--orange badge">Stripe</span>
+                            <span class="badge--violet badge">8 Agents</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <a href="portfolio/nexusweb3-operations.html" class="portfolio-card" data-tags="ai-agents automation">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--accent-blue);">NX</div>
+                            <div class="portfolio-card__title">NexusWeb3 Operations Center</div>
+                        </div>
+                        <p class="portfolio-card__desc">9 autonomous AI agents deployed on a VPS, running 24/7 with real-time dashboard, Telegram integration, CRM pipeline, and automated cron scheduling.</p>
+                        <div class="badges">
+                            <span class="badge">Python</span>
+                            <span class="badge--violet badge">Claude AI</span>
+                            <span class="badge--green badge">9 Agents</span>
+                            <span class="badge--orange badge">Docker</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <a href="portfolio/hardwood-wedges.html" class="portfolio-card" data-tags="web-apps">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); color: var(--accent-orange);">HW</div>
+                            <div class="portfolio-card__title">Hardwood Wedges Shop</div>
+                        </div>
+                        <p class="portfolio-card__desc">E-commerce store with interactive Three.js 3D product configurator. Dual payment processing (Stripe + PayPal), Firebase backend, and responsive design.</p>
+                        <div class="badges">
+                            <span class="badge">React</span>
+                            <span class="badge--orange badge">Three.js</span>
+                            <span class="badge--green badge">Stripe</span>
+                            <span class="badge">Firebase</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <a href="portfolio/naura-discord-bot.html" class="portfolio-card" data-tags="ai-agents bots">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); color: var(--accent-violet);">NR</div>
+                            <div class="portfolio-card__title">NAURA Discord Bot</div>
+                        </div>
+                        <p class="portfolio-card__desc">176K+ lines of code. 6+ AI agents with LangChain orchestration, FastAPI backend, deep Discord integration, and modular plugin architecture.</p>
+                        <div class="badges">
+                            <span class="badge">Python</span>
+                            <span class="badge--violet badge">LangChain</span>
+                            <span class="badge">FastAPI</span>
+                            <span class="badge--green badge">6+ Agents</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <a href="portfolio/token-scanner.html" class="portfolio-card" data-tags="automation">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: var(--accent-green);">TS</div>
+                            <div class="portfolio-card__title">Token Security Scanner</div>
+                        </div>
+                        <p class="portfolio-card__desc">Multi-chain EVM + Solana token security scanner with automated PDF report generation, honeypot detection, and on-chain risk analysis.</p>
+                        <div class="badges">
+                            <span class="badge">Python</span>
+                            <span class="badge--green badge">Multi-Chain</span>
+                            <span class="badge--orange badge">Automated</span>
+                        </div>
+                        <span class="portfolio-card__link">View Case Study &rarr;</span>
+                    </a>
+
+                    <div class="portfolio-card portfolio-card--no-link" data-tags="web-apps">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--accent-blue);">FD</div>
+                            <div class="portfolio-card__title">Fire Door Survey App</div>
+                        </div>
+                        <p class="portfolio-card__desc">Mobile-first survey application for fire door compliance inspections. Offline-capable with photo capture, GPS tagging, and automated PDF report generation.</p>
+                        <div class="badges">
+                            <span class="badge">React</span>
+                            <span class="badge--green badge">PWA</span>
+                            <span class="badge">Firebase</span>
+                        </div>
+                        <span class="portfolio-card__link">Case study coming soon</span>
+                    </div>
+
+                    <div class="portfolio-card portfolio-card--no-link" data-tags="web-apps automation">
+                        <div class="portfolio-card__header">
+                            <div class="portfolio-card__icon" style="background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); color: var(--accent-orange);">BF</div>
+                            <div class="portfolio-card__title">Bankflow</div>
+                        </div>
+                        <p class="portfolio-card__desc">Personal finance management application with bank statement parsing, expense categorization, budget tracking, and financial insights dashboard.</p>
+                        <div class="badges">
+                            <span class="badge">React</span>
+                            <span class="badge--orange badge">Node.js</span>
+                            <span class="badge">PostgreSQL</span>
+                        </div>
+                        <span class="portfolio-card__link">Case study coming soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Want Something Similar?</h2>
+                    <p>Every project started with a conversation. Tell us what problem you need solved.</p>
+                    <a href="contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            var filters = document.getElementById('filters');
+            var grid = document.getElementById('portfolio-grid');
+            var cards = grid.querySelectorAll('[data-tags]');
+
+            filters.addEventListener('click', function(e) {
+                var btn = e.target.closest('.filter-tabs__btn');
+                if (!btn) return;
+                var filter = btn.getAttribute('data-filter');
+
+                filters.querySelectorAll('.filter-tabs__btn').forEach(function(b) {
+                    b.classList.remove('filter-tabs__btn--active');
+                });
+                btn.classList.add('filter-tabs__btn--active');
+
+                cards.forEach(function(card) {
+                    if (filter === 'all') {
+                        card.style.display = '';
+                    } else {
+                        var tags = card.getAttribute('data-tags');
+                        card.style.display = tags.indexOf(filter) !== -1 ? '' : 'none';
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

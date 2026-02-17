@@ -3,324 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | NexusWeb3</title>
-    <meta name="description" content="Independent Web3 security research using AI-augmented analysis.">
+    <title>About | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="Full-stack developer turned AI solutions architect. 9+ production projects, 6 AI agent platforms, clients in 3 countries. We build custom AI systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #0f0f14;
-            --bg-tertiary: #1a1a1f;
-            --border: #262630;
-            --text-primary: #ffffff;
-            --text-secondary: #a3a3b8;
-            --text-tertiary: #737383;
-            --accent-blue: #3b82f6;
-            --accent-green: #10b981;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-        }
-        
-        header {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        
-        header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-        
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover,
-        nav a.active {
-            color: var(--text-primary);
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        main {
-            padding: 5rem 0;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        .intro {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            line-height: 1.6;
-        }
-        
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-top: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-blue);
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        li {
-            margin-bottom: 0.75rem;
-        }
-        
-        strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        a {
-            color: var(--accent-green);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .stat {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-        
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 0;
-            margin-top: 5rem;
-        }
-        
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        footer p {
-            color: var(--text-tertiary);
-            margin: 0;
-        }
-        
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        footer a:hover {
-            color: var(--text-primary);
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .intro {
-                font-size: 1.1rem;
-            }
-            
-            nav {
-                gap: 1rem;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
-            
-            footer .container {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-        .cta-link {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
-            color: #000 !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
             <a href="/" class="logo">NexusWeb3</a>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/blog/">Research</a>
-                <a href="/about.html" class="active">About</a>
-                <a href="/methodology.html">Methodology</a>
-            <a href="/token-security-scan.html" class="cta-link">Token Scan</a></nav>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="portfolio.html" class="nav__link">Portfolio</a>
+                <a href="methodology.html" class="nav__link">Methodology</a>
+                <a href="pricing.html" class="nav__link">Pricing</a>
+                <a href="about.html" class="nav__link nav__link--active">About</a>
+                <a href="contact.html" class="nav__cta">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <h1>About NexusWeb3</h1>
-        <p class="intro">
-            Independent Web3 security research. We find vulnerabilities in smart contracts through systematic analysis and working proof-of-concept exploits.
-        </p>
-
-        <h2>What We Do</h2>
-        <p>
-            We hunt vulnerabilities in DeFi protocols across EVM and Solana. Our focus areas include lending protocols, DEXes, vaults, bridges, and governance systems.
-        </p>
-        <p>
-            Every finding requires a working PoC. No exploit code that passes <code>forge test</code> = no submission. We quantify impact in dollar terms and cite real transactions.
-        </p>
-
-        <h2>Our Approach</h2>
-        <p>
-            We think like attackers. Instead of line-by-line auditing, we identify high-risk attack surfaces and test hypotheses with working exploits.
-        </p>
-        <ul>
-            <li><strong>Systematic analysis:</strong> Map trust boundaries and external dependencies</li>
-            <li><strong>Kill zone identification:</strong> Tag functions with oracle calls, math operations, access control</li>
-            <li><strong>Proof-of-concept development:</strong> Build working exploits in Foundry or Anchor</li>
-            <li><strong>Impact quantification:</strong> Calculate dollar amounts with real on-chain data</li>
-        </ul>
-        <p>
-            Read our full <a href="/methodology.html">methodology</a> for details.
-        </p>
-
-        <h2>AI-Augmented Research</h2>
-        <p>
-            We use AI as a force multiplier for security research. Pattern recognition, code analysis, and documentation generation happen faster with AI assistance.
-        </p>
-        <p>
-            But final decisions on every finding require human judgment. AI helps us analyze faster. It doesn't replace the security researcher.
-        </p>
-
-        <h2>Track Record</h2>
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Protocols Analyzed</div>
+    <main>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>About <span class="accent">NexusWeb3</span></h1>
+                <p>Full-stack developer turned AI solutions architect. Building custom AI systems that replace expensive SaaS tools and actually do the work.</p>
             </div>
-            <div class="stat">
-                <div class="stat-number">40+</div>
-                <div class="stat-label">Kill Zones Investigated</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">$200M+</div>
-                <div class="stat-label">Exploits Documented</div>
-            </div>
-        </div>
-        <p>
-            We've analyzed exploits including Mango Markets ($116M), Cashio ($52M), Euler ($197M), Curve/Vyper ($70M), Nomad ($190M), and Wormhole ($320M).
-        </p>
-        <p>
-            Our research is published openly. Every exploit breakdown, vulnerability pattern, and detection technique is documented.
-        </p>
+        </section>
 
-        <h2>Open Source</h2>
-        <p>All our research is public:</p>
-        <ul>
-            <li><strong>GitHub:</strong> <a href="https://github.com/nexusweb3dev">github.com/nexusweb3dev</a></li>
-            <li><strong>Blog:</strong> Exploit breakdowns, vulnerability patterns, detection methods</li>
-        </ul>
-        <p>
-            We publish everything except active zero-days, which we report privately to affected protocols first.
-        </p>
+        <section class="section--sm">
+            <div class="container--narrow">
+                <!-- Who -->
+                <div class="case-section">
+                    <h2>Who I Am</h2>
+                    <p>I am Evaldas, a full-stack developer who specializes in building AI-powered systems. After years of building web applications, SaaS products, and automation tools, I noticed a pattern: businesses keep paying monthly rent for software that does a fraction of what a custom AI system could do.</p>
+                    <p>So I started NexusWeb3 AI Solutions. The mission is simple — build custom AI systems that replace expensive SaaS stacks. One-time cost. You own the code. It runs on your infrastructure.</p>
+                </div>
 
-        <h2>Contact</h2>
-        <p>
-            For security disclosures or collaboration inquiries, reach out via <a href="https://github.com/nexusweb3dev">GitHub</a>.
-        </p>
+                <!-- What -->
+                <div class="case-section">
+                    <h2>What I Build</h2>
+                    <p>I build AI agent systems, automation workflows, intelligent dashboards, and full-stack web applications. The common thread: every project solves a specific business problem with working software — not slides, not prototypes, not concepts.</p>
+                    <p>My work spans multiple domains: social media automation, invoice processing, security analysis, e-commerce, community management, and business operations. Each project uses the right stack for the job — Python for AI and automation, React/Next.js for frontends, FastAPI/Node.js for backends.</p>
+                </div>
+
+                <!-- Track Record -->
+                <div class="case-section">
+                    <h2>Track Record</h2>
+                    <div class="grid-4 mb-6">
+                        <div class="stat-card">
+                            <div class="stat-card__number">9+</div>
+                            <div class="stat-card__label">Production Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">6</div>
+                            <div class="stat-card__label">AI Agent Platforms</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">176K+</div>
+                            <div class="stat-card__label">Lines of Code</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">3</div>
+                            <div class="stat-card__label">Countries Served</div>
+                        </div>
+                    </div>
+                    <p>These are not side projects or tutorials. Each one is a production system — deployed, running, and solving real problems. From 11-agent content automation platforms to 176K-line Discord bots, I build at scale and ship working software.</p>
+                    <p><a href="portfolio.html">See the full portfolio</a> with detailed case studies for each project.</p>
+                </div>
+
+                <!-- Philosophy -->
+                <div class="case-section">
+                    <h2>Philosophy</h2>
+                    <div class="grid-2 mb-4">
+                        <div class="card">
+                            <h4 class="mb-2">Working systems over prototypes</h4>
+                            <p class="text-secondary" style="margin: 0;">Every project ships as a deployed, production-ready system. Not a demo. Not a proof of concept.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="mb-2">Ownership over subscriptions</h4>
+                            <p class="text-secondary" style="margin: 0;">You get the complete source code. Deploy it anywhere. Modify it freely. No vendor lock-in.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="mb-2">Right tool for the job</h4>
+                            <p class="text-secondary" style="margin: 0;">Premium AI models where quality matters. Cost-effective models for routine tasks. The best stack for each project, not one-size-fits-all.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="mb-2">Transparency over hype</h4>
+                            <p class="text-secondary" style="margin: 0;">Clear pricing, honest timelines, real capabilities. AI is powerful but it is not magic. I set expectations accurately.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web3 Security Background -->
+                <div class="case-section">
+                    <h2>Web3 Security Background</h2>
+                    <p>Before pivoting to custom AI solutions, I ran an autonomous smart contract security research operation with 9 AI agents. That experience — hunting vulnerabilities in DeFi protocols, building automated security scanners, managing a multi-agent system on a VPS — directly informs how I build AI systems today.</p>
+                    <p>Token security scanning remains available as a specialized service. If you need smart contract analysis or automated security tooling, that expertise is built into the offering.</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-banner mt-8">
+                    <h2>Ready to Start?</h2>
+                    <p>Book a free discovery call. Let's figure out what AI can do for your business.</p>
+                    <a href="contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>Independent Security Research</p>
-            <a href="https://github.com/nexusweb3dev" target="_blank">GitHub</a>
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
     </footer>
 </body>

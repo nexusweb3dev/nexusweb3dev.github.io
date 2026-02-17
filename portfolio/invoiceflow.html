@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvoiceFlow — Case Study | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="Full SaaS platform with Turborepo monorepo, Gemini OCR at 95% accuracy, Stripe billing, GDPR compliance, and 8 AI agents.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="../portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="../methodology.html" class="nav__link">Methodology</a>
+                <a href="../pricing.html" class="nav__link">Pricing</a>
+                <a href="../about.html" class="nav__link">About</a>
+                <a href="../contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container--narrow">
+                <div class="breadcrumb">
+                    <a href="../portfolio.html">Portfolio</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>InvoiceFlow</span>
+                </div>
+                <h1>InvoiceFlow</h1>
+                <p class="case-hero__tagline">A production SaaS platform that turns invoice photos into structured data at 95% accuracy — with 8 AI agents handling everything from OCR to billing.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container--narrow">
+                <div class="case-section">
+                    <h2>The Problem</h2>
+                    <p>Small businesses spend hours every week manually entering invoice data. They photograph or scan invoices, then retype every field — supplier name, amounts, dates, line items — into their accounting software. Mistakes are common, and the process does not scale.</p>
+                    <p>Existing OCR solutions either lack accuracy on messy real-world invoices or charge prohibitive per-page fees. Most small businesses cannot justify enterprise OCR pricing for their volume.</p>
+                    <p>We needed an end-to-end solution: snap a photo, get structured data, track payments, and manage the entire invoice lifecycle — all from one platform with SaaS-grade reliability.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Our Solution</h2>
+                    <p>InvoiceFlow is a complete SaaS platform built as a Turborepo monorepo with a React frontend, FastAPI backend, and PostgreSQL database. The core innovation is a Gemini-powered OCR pipeline that achieves 95%+ accuracy on real-world invoice photos — including crumpled receipts, angled shots, and multi-language documents.</p>
+                    <p>Eight AI agents handle different aspects of the workflow: document classification, field extraction, data validation, duplicate detection, currency conversion, payment tracking, anomaly flagging, and report generation. The agents work as a pipeline — each one refines the data before passing it forward.</p>
+                    <p>Stripe handles subscription billing with multiple tiers, and the entire system is GDPR compliant with proper data retention policies and user consent management.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Tech Stack</h2>
+                    <div class="badges" style="gap: 0.75rem;">
+                        <span class="badge--green badge">Turborepo</span>
+                        <span class="badge">React</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge--orange badge">Stripe</span>
+                        <span class="badge--violet badge">Gemini AI</span>
+                        <span class="badge--green badge">8 Agents</span>
+                        <span class="badge">Three.js</span>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h4>95%+ OCR Accuracy</h4>
+                            <p>Gemini-powered extraction that handles real-world conditions: poor lighting, angles, crumpled paper, handwritten notes, multiple languages.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>8-Agent Pipeline</h4>
+                            <p>Classification, extraction, validation, dedup, currency, payments, anomaly detection, and reporting — each agent specializes in one task.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Turborepo Monorepo</h4>
+                            <p>Shared packages across frontend, backend, and AI services. Type-safe end-to-end with shared interfaces and validation schemas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Stripe Billing</h4>
+                            <p>Multiple subscription tiers, usage-based pricing for OCR calls, automatic invoice generation, and payment retry logic.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>GDPR Compliance</h4>
+                            <p>Data retention policies, user consent management, export/delete functionality, and audit logging for regulatory compliance.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>3D Landing Page</h4>
+                            <p>Interactive Three.js landing page with animated invoice models, smooth scroll transitions, and conversion-optimized design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Results</h2>
+                    <div class="grid-3" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-card__number">95%+</div>
+                            <div class="stat-card__label">OCR Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">8</div>
+                            <div class="stat-card__label">AI Agents</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">&lt;3s</div>
+                            <div class="stat-card__label">Processing Time</div>
+                        </div>
+                    </div>
+                    <p>The platform processes invoices in under 3 seconds from photo to structured data. What previously required 5-10 minutes of manual entry per invoice now happens automatically with higher accuracy than human data entry.</p>
+                </div>
+
+                <div class="cta-banner mt-8">
+                    <h2>Need a Custom SaaS Platform?</h2>
+                    <p>We build full-stack SaaS products with AI integrations, billing, and compliance from day one.</p>
+                    <a href="../contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

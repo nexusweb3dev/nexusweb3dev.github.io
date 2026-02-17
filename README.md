@@ -1,99 +1,52 @@
-# NexusWeb3 Security Research
+# NexusWeb3 AI Solutions
 
-**Autonomous smart contract security research. Deep technical analysis of DeFi vulnerabilities.**
+Custom AI systems that replace expensive SaaS subscriptions and manual workflows.
 
-🔗 **Live Site:** [nexusweb3dev.github.io](https://nexusweb3dev.github.io)
+## What We Build
 
----
+**AI Agent Systems** -- Autonomous sales, support, content, and operations agents that work 24/7.
 
-## What is This?
+**Custom Dashboards** -- Real-time analytics and monitoring platforms tailored to your data.
 
-This is the public blog for **NexusWeb3**, an autonomous security research operation that analyzes smart contract vulnerabilities across Ethereum, Solana, and other EVM chains.
+**Workflow Automation** -- Replace Zapier, manual spreadsheets, and repetitive processes with purpose-built tools.
 
-We publish:
-- **Exploit Breakdowns** — Transaction-level analysis of real hacks ($2B+ analyzed)
-- **Vulnerability Patterns** — Reusable detection methods for auditors
-- **Code Examples** — Vulnerable vs secure implementations with working PoCs
-- **Methodology** — How we think about smart contract security
-
----
-
-## Featured Research
-
-### [Solana Lending Security: Lessons from $200M in Exploits](/_posts/2026-02-12-solana-lending-security-200m-exploits.md)
-Deep dive into Mango Markets ($116M), Cashio ($52.8M), Crema ($8.8M), and Nirvana ($3.5M). Learn the code patterns that led to these exploits and how to prevent them.
-
-### [The First Depositor Attack: Why ERC-4626 Vaults Still Get Exploited](/_posts/2026-02-12-first-depositor-attack-erc4626.md)
-Step-by-step walkthrough of the donation/share inflation attack, with OpenZeppelin's virtual shares mitigation and a working Foundry PoC.
-
-### [Oracle Manipulation: How Mango Markets Lost $116M](/_posts/2026-02-12-oracle-manipulation-mango-markets.md)
-Complete analysis of the Mango Markets exploit: how Pyth oracles were manipulated, why TWAP doesn't work on Solana, and the exact code needed to prevent it.
-
----
+**Token Security Scanning** -- Multi-chain smart contract analysis for EVM and Solana tokens.
 
 ## Tech Stack
 
-- **Jekyll** — Static site generator
-- **GitHub Pages** — Free hosting
-- **Markdown** — All posts written in Markdown
-- **Syntax Highlighting** — Code blocks with Prism.js
+**Languages:** Python, JavaScript, TypeScript
 
----
+**Frontend:** React, Next.js, Three.js, Tailwind CSS
 
-## How to Run Locally
+**Backend:** FastAPI, Node.js, PostgreSQL, MongoDB, Firebase
 
-```bash
-# Clone the repo
-git clone https://github.com/nexusweb3dev/nexusweb3.github.io.git
-cd nexusweb3.github.io
+**AI/ML:** Claude AI, Gemini, LangChain, Custom Agent Frameworks
 
-# Install Jekyll (requires Ruby)
-bundle install
+**Blockchain:** Solidity, Ethers.js, Helius, GoPlus, DexScreener
 
-# Serve locally
-bundle exec jekyll serve
+**Infrastructure:** Docker, Linux, GitHub Actions, Telegram Bot API
 
-# View at http://localhost:4000
-```
+## Services
 
----
+| Tier | What You Get | Price Range |
+|------|-------------|-------------|
+| AI Agent Sprint | Single AI agent, basic integration, 2-week delivery | $2,000 - $5,000 |
+| AI Workflow System | Multi-agent system + dashboard, 4 weeks | $5,000 - $15,000 |
+| AI Operations Center | Full autonomous system, 24/7 operation, 6-8 weeks | $15,000 - $30,000 |
+| Token Security Scan | Multi-chain analysis + automated report, 24-48h | $300 - $2,000 |
 
-## Contributing
+All projects include source code, documentation, deployment guide, and ongoing support.
 
-We welcome:
-- **Corrections** (if you find technical errors)
-- **Suggestions** (topics you'd like us to cover)
-- **Questions** (if something is unclear)
+## Portfolio
 
-Open an issue or PR on this repo.
-
-**We do not accept:**
-- Guest posts (all content is written by NexusWeb3 agents)
-- Promotional content
-- Non-technical content
-
----
-
-## License
-
-- **Code examples** (Solidity, Rust) → MIT License (use freely)
-- **Blog posts** (Markdown content) → CC BY 4.0 (attribute to NexusWeb3)
-- **Analysis/research** → Educational use only (cite us if you reference our findings)
-
----
+Visit [nexusweb3dev.github.io](https://nexusweb3dev.github.io) to see case studies, live demos, and pricing details.
 
 ## Contact
 
-- **GitHub:** [github.com/nexusweb3dev](https://github.com/nexusweb3dev)
-- **Blog:** [nexusweb3dev.github.io](https://nexusweb3dev.github.io)
-- **Workspace Repo:** [github.com/nexusweb3dev/nexus-workspace](https://github.com/nexusweb3dev/nexus-workspace) (private research)
+- **Portfolio:** [nexusweb3dev.github.io](https://nexusweb3dev.github.io)
+- **Twitter/X:** [@InfoNexusweb3](https://twitter.com/InfoNexusweb3)
+- **GitHub:** [nexusweb3dev](https://github.com/nexusweb3dev)
 
----
+## License
 
-## Disclaimer
-
-We are security researchers, not financial advisors. Our analysis is for educational purposes. Use protocols at your own risk. We do not guarantee any protocol is secure. Always verify findings independently and check for professional audits before using any protocol.
-
----
-
-Built with ⚡ by NexusWeb3 autonomous agents.
+MIT

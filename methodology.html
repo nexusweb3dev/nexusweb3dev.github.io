@@ -3,358 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methodology | NexusWeb3</title>
-    <meta name="description" content="How NexusWeb3 approaches smart contract security research: systematic, evidence-based, PoC-required.">
+    <title>Methodology | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="Our 5-step AI delivery methodology: Audit, Map, Build, Integrate, Operate. How we turn your SaaS costs into owned AI assets.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #0f0f0f;
-            --bg-tertiary: #1a1a1a;
-            --border: #262626;
-            --text-primary: #ffffff;
-            --text-secondary: #a3a3a3;
-            --text-tertiary: #737373;
-            --accent: #3b82f6;
-            --accent-secondary: #10b981;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-        }
-        
-        header {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        
-        header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-        
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover,
-        nav a.active {
-            color: var(--text-primary);
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        main {
-            padding: 5rem 0;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        .intro {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            line-height: 1.6;
-        }
-        
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-top: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-        
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        ul, ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-        
-        li {
-            margin-bottom: 0.75rem;
-        }
-        
-        strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        .principle {
+        .method-detail {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
+            border-radius: var(--radius-lg);
+            padding: 3rem;
             margin-bottom: 2rem;
         }
-        
-        .principle h3 {
-            margin-top: 0;
-            color: var(--accent-secondary);
-        }
-        
-        code {
-            font-family: 'JetBrains Mono', monospace;
-            background: var(--bg-tertiary);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9em;
-            color: var(--accent-secondary);
-        }
-        
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 0;
-            margin-top: 5rem;
-        }
-        
-        footer .container {
+        .method-detail__header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
         }
-        
-        footer p {
-            color: var(--text-tertiary);
-            margin: 0;
-        }
-        
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        footer a:hover {
-            color: var(--text-primary);
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .intro {
-                font-size: 1.1rem;
-            }
-            
-            nav {
-                gap: 1rem;
-            }
-            
-            footer .container {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-        .cta-link {
+        .method-detail__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
-            color: #000 !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            color: #000;
+            font-weight: 800;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
-        .cta-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        .method-detail__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .method-detail p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .method-detail p:last-child {
+            margin-bottom: 0;
+        }
+        .method-detail ul {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .method-detail li {
+            margin-bottom: 0.5rem;
+        }
+        .deliverable {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 0.375rem 0.75rem;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .method-detail {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
             <a href="/" class="logo">NexusWeb3</a>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/blog/">Research</a>
-                <a href="/about.html">About</a>
-                <a href="/methodology.html" class="active">Methodology</a>
-            <a href="/token-security-scan.html" class="cta-link">Token Scan</a></nav>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="portfolio.html" class="nav__link">Portfolio</a>
+                <a href="methodology.html" class="nav__link nav__link--active">Methodology</a>
+                <a href="pricing.html" class="nav__link">Pricing</a>
+                <a href="about.html" class="nav__link">About</a>
+                <a href="contact.html" class="nav__cta">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <h1>Methodology</h1>
-        <p class="intro">
-            How we approach smart contract security research: systematic, evidence-based, and uncompromising on proof.
-        </p>
+    <main>
+        <section class="hero" style="padding-bottom: 2rem;">
+            <div class="container">
+                <h1>Our <span class="accent">Methodology</span></h1>
+                <p>A proven 5-step process for turning your SaaS costs and manual workflows into owned AI assets that work 24/7.</p>
+            </div>
+        </section>
 
-        <h2>Core Principles</h2>
+        <!-- Overview Steps -->
+        <section class="section--sm">
+            <div class="container">
+                <div class="methodology-steps mb-8">
+                    <div class="methodology-step">
+                        <div class="methodology-step__number">1</div>
+                        <div class="methodology-step__title">Audit</div>
+                        <div class="methodology-step__desc">Analyze current costs and pain points.</div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-step__number">2</div>
+                        <div class="methodology-step__title">Map</div>
+                        <div class="methodology-step__desc">Design the AI replacement architecture.</div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-step__number">3</div>
+                        <div class="methodology-step__title">Build</div>
+                        <div class="methodology-step__desc">Develop agents, dashboards, and integrations.</div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-step__number">4</div>
+                        <div class="methodology-step__title">Integrate</div>
+                        <div class="methodology-step__desc">Connect to your existing systems.</div>
+                    </div>
+                    <div class="methodology-step">
+                        <div class="methodology-step__number">5</div>
+                        <div class="methodology-step__title">Operate</div>
+                        <div class="methodology-step__desc">Deploy for 24/7 autonomous operation.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="principle">
-            <h3>Working PoC or It's Not a Bug</h3>
-            <p>
-                Theory is worthless. We build proof-of-concept exploits for every finding. If <code>forge test</code> doesn't pass, the vulnerability doesn't exist. No exceptions.
-            </p>
-            <p>
-                Every submission includes a working exploit, quantified impact in dollar terms, and the exact conditions required to trigger it.
-            </p>
-        </div>
+        <!-- Detailed Steps -->
+        <section class="section--sm">
+            <div class="container--narrow">
+                <div class="method-detail">
+                    <div class="method-detail__header">
+                        <div class="method-detail__number">1</div>
+                        <div class="method-detail__title">Audit</div>
+                    </div>
+                    <p>Every project starts with understanding your current reality. We map your tech stack, identify SaaS subscriptions, document manual processes, and measure where time and money are being spent.</p>
+                    <p>This is not a superficial survey. We dig into the details:</p>
+                    <ul>
+                        <li>What SaaS tools are you paying for? What do they actually do vs. what you use?</li>
+                        <li>What manual processes eat the most time? Where are the bottlenecks?</li>
+                        <li>What data flows between systems? What is automated and what requires human intervention?</li>
+                        <li>What are the pain points your team complains about most?</li>
+                    </ul>
+                    <div class="deliverable">Deliverable: SaaS Cost Map + Process Audit Document</div>
+                </div>
 
-        <div class="principle">
-            <h3>Evidence Over Opinion</h3>
-            <p>
-                We cite real code, real transaction hashes, and real exploit amounts. When we say "$116M lost to oracle manipulation," we link to the Mango Markets exploit transaction on Solscan.
-            </p>
-            <p>
-                No speculation. No "this could theoretically be exploited." Either we can steal money with working code, or it's secure.
-            </p>
-        </div>
+                <div class="method-detail">
+                    <div class="method-detail__header">
+                        <div class="method-detail__number">2</div>
+                        <div class="method-detail__title">Map</div>
+                    </div>
+                    <p>With the audit complete, we design the AI replacement architecture. This is where we decide what agents do what, how they communicate, what data they need, and how they integrate with your existing systems.</p>
+                    <p>Key decisions at this stage:</p>
+                    <ul>
+                        <li>Agent roles and responsibilities — each agent gets a specific job with clear inputs and outputs</li>
+                        <li>Data architecture — where data lives, how it flows, what needs persistent storage vs. real-time processing</li>
+                        <li>Integration points — which existing systems stay, which get replaced, how we bridge the gaps</li>
+                        <li>Model selection — premium models for critical decisions, cost-effective models for routine tasks</li>
+                        <li>Human approval gates — where automation needs human sign-off before proceeding</li>
+                    </ul>
+                    <div class="deliverable">Deliverable: Architecture Diagram + Agent Specification Document</div>
+                </div>
 
-        <div class="principle">
-            <h3>AI-Augmented Research</h3>
-            <p>
-                We use AI as a force multiplier for security research. Pattern recognition, code analysis, and documentation generation happen faster with AI assistance.
-            </p>
-            <p>
-                But the final decision on every finding requires human judgment. AI helps us analyze faster; it doesn't replace the security researcher.
-            </p>
-        </div>
+                <div class="method-detail">
+                    <div class="method-detail__header">
+                        <div class="method-detail__number">3</div>
+                        <div class="method-detail__title">Build</div>
+                    </div>
+                    <p>We build the system in iterative sprints, delivering working pieces you can review and test along the way. No big-bang delivery where you see the final product for the first time on launch day.</p>
+                    <p>The build phase covers:</p>
+                    <ul>
+                        <li>AI agent development with proper prompt engineering, tool use, and error handling</li>
+                        <li>Backend APIs and data pipelines</li>
+                        <li>Frontend dashboards and admin interfaces</li>
+                        <li>Database schema and data migration if replacing existing systems</li>
+                        <li>Testing — unit tests, integration tests, and end-to-end validation</li>
+                    </ul>
+                    <p>You get access to a staging environment where you can interact with the system as it develops. Feedback loops are short — typically weekly demos with adjustments.</p>
+                    <div class="deliverable">Deliverable: Working System on Staging Environment</div>
+                </div>
 
-        <h2>Research Process</h2>
+                <div class="method-detail">
+                    <div class="method-detail__header">
+                        <div class="method-detail__number">4</div>
+                        <div class="method-detail__title">Integrate</div>
+                    </div>
+                    <p>The AI system needs to work with your existing tools, not replace everything at once. We connect the new system to your current stack — CRM, email, Slack, databases, third-party APIs, and whatever else your team relies on.</p>
+                    <p>Integration includes:</p>
+                    <ul>
+                        <li>API connections to your existing services (Salesforce, HubSpot, Mailchimp, Slack, etc.)</li>
+                        <li>Data migration from old systems to new</li>
+                        <li>Webhook configuration for real-time event handling</li>
+                        <li>Authentication and permission setup</li>
+                        <li>Parallel running period where old and new systems operate side by side</li>
+                    </ul>
+                    <div class="deliverable">Deliverable: Fully Integrated System + Migration Report</div>
+                </div>
 
-        <h3>1. Target Selection</h3>
-        <p>We prioritize protocols that match specific criteria:</p>
-        <ul>
-            <li><strong>Fresh code:</strong> Recent deployments or upgrades where patterns may not be hardened yet</li>
-            <li><strong>Limited audit history:</strong> 0-1 prior audits from smaller firms</li>
-            <li><strong>Math complexity:</strong> Non-trivial calculation chains where rounding errors or edge cases hide</li>
-            <li><strong>Economic value:</strong> Significant TVL or bounty pool to justify research time</li>
-        </ul>
+                <div class="method-detail">
+                    <div class="method-detail__header">
+                        <div class="method-detail__number">5</div>
+                        <div class="method-detail__title">Operate</div>
+                    </div>
+                    <p>The system goes live. We deploy to your production infrastructure — VPS, cloud, or on-premise — with monitoring, alerting, and automated health checks. The goal is autonomous operation with minimal human oversight.</p>
+                    <p>Operational setup includes:</p>
+                    <ul>
+                        <li>Production deployment with Docker containerization</li>
+                        <li>Monitoring dashboards for system health, agent performance, and error rates</li>
+                        <li>Alerting via Telegram, Slack, or email when issues arise</li>
+                        <li>Automated recovery and restart procedures</li>
+                        <li>Scheduled cron jobs for recurring agent tasks</li>
+                        <li>Documentation and runbooks for your team</li>
+                    </ul>
+                    <p>Post-launch support (1-6 months depending on tier) covers bug fixes, performance tuning, and minor adjustments as you learn how the system performs in production.</p>
+                    <div class="deliverable">Deliverable: Production Deployment + Monitoring + Documentation</div>
+                </div>
+            </div>
+        </section>
 
-        <h3>2. Understanding</h3>
-        <p>Before hunting vulnerabilities, we map the entire protocol:</p>
-        <ul>
-            <li>Trust boundaries: Who can call what, and with what privileges?</li>
-            <li>State transitions: How does user action X affect system state Y?</li>
-            <li>External dependencies: Oracles, cross-contract calls, price feeds</li>
-            <li>Calculation chains: Math operations from input to output, looking for precision loss</li>
-        </ul>
+        <!-- Principles -->
+        <section class="section section--bg">
+            <div class="container--narrow">
+                <h2 class="text-center mb-8">Guiding Principles</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4 class="mb-2">Ship working software, not documents</h4>
+                        <p class="text-secondary" style="margin: 0;">Every milestone delivers something you can click on, interact with, and test. Architecture documents exist to support the build, not replace it.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="mb-2">Optimize for total cost of ownership</h4>
+                        <p class="text-secondary" style="margin: 0;">We pick models, infrastructure, and architectures that minimize your ongoing costs — not just the build cost.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="mb-2">Human-in-the-loop where it matters</h4>
+                        <p class="text-secondary" style="margin: 0;">Full automation is the goal, but critical decisions get human approval gates. The system escalates when unsure.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="mb-2">Graceful degradation</h4>
+                        <p class="text-secondary" style="margin: 0;">When an API goes down or a model fails, the system handles it gracefully — retries, fallbacks, and alerts instead of crashes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h3>3. Kill Zone Identification</h3>
-        <p>We tag high-risk areas for deep analysis:</p>
-        <ul>
-            <li>Reentrancy surfaces (external calls before state updates)</li>
-            <li>Access control gaps (missing checks, bypassable modifiers)</li>
-            <li>Math errors (overflow, underflow, rounding to zero)</li>
-            <li>Oracle manipulation (stale data, price impact, TWAP bypass)</li>
-            <li>Flash loan attacks (borrow → manipulate → profit → repay)</li>
-            <li>Economic exploits (arbitrage, MEV, donation attacks)</li>
-        </ul>
-
-        <h3>4. Attack Development</h3>
-        <p>For each kill zone, we attempt exploitation:</p>
-        <ol>
-            <li>Build a Foundry test that reproduces the vulnerable scenario</li>
-            <li>Develop the attack vector with real attacker constraints (gas costs, capital requirements)</li>
-            <li>Run the exploit: <code>forge test -vvv</code> must show funds stolen or system broken</li>
-            <li>Quantify impact: How much can be stolen? Under what conditions?</li>
-        </ol>
-
-        <h3>5. Verification</h3>
-        <p>Before reporting, every finding passes a kill test:</p>
-        <ul>
-            <li><strong>Real impact:</strong> Can this actually steal or lock funds?</li>
-            <li><strong>Measurable:</strong> Quantified dollar amount with real numbers?</li>
-            <li><strong>Reachable:</strong> Can a real attacker trigger this with public functions?</li>
-            <li><strong>In scope:</strong> Within the bug bounty program rules?</li>
-            <li><strong>Not admin:</strong> Doesn't require trusted roles? ("Admin can rug" = invalid)</li>
-            <li><strong>PoC passes:</strong> <code>forge test -vvv</code> shows PASS?</li>
-            <li><strong>Economically viable:</strong> Profit exceeds gas costs?</li>
-        </ul>
-
-        <h2>Tooling</h2>
-        
-        <h3>Static Analysis</h3>
-        <p>We use Slither for automated pattern detection, but we don't trust its output blindly. False positives get cataloged and filtered. Every static analysis alert requires manual verification.</p>
-
-        <h3>Dynamic Testing</h3>
-        <p>Foundry is our primary testing framework. We fork mainnet state when testing live protocols, isolate test environments for math proofs, and use fuzzing when input space is large.</p>
-
-        <h3>Manual Review</h3>
-        <p>The majority of vulnerabilities come from reading code and asking "what if?" Static analysis catches known patterns. Manual review catches novel attack vectors.</p>
-
-        <h2>What We Don't Do</h2>
-        <ul>
-            <li><strong>Inflate severity:</strong> If it's MEDIUM, we call it MEDIUM. Honesty earns trust.</li>
-            <li><strong>Report without PoC:</strong> No working exploit = no submission.</li>
-            <li><strong>Guess impact:</strong> We quantify every finding with real numbers.</li>
-            <li><strong>Ignore economics:</strong> A $100 exploit that costs $500 in gas isn't valid.</li>
-            <li><strong>Rush to submit:</strong> We verify findings multiple times before reporting.</li>
-        </ul>
-
-        <h2>Continuous Learning</h2>
-        <p>
-            Every protocol we analyze teaches us something. We document patterns, false positives, and successful attack vectors in an internal knowledge base.
-        </p>
-        <p>
-            When we're wrong, we document why. When a protocol is secure despite looking vulnerable, we document the defense pattern. This accumulated knowledge makes us faster and more accurate over time.
-        </p>
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Ready for the Audit?</h2>
+                    <p>The first step is always a conversation. Book a free discovery call and we will start mapping your current costs and opportunities.</p>
+                    <a href="contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>Independent Security Research</p>
-            <a href="https://github.com/nexusweb3dev" target="_blank">GitHub</a>
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </div>
     </footer>
 </body>

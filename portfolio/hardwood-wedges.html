@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardwood Wedges Shop — Case Study | NexusWeb3 AI Solutions</title>
+    <meta name="description" content="E-commerce store with Three.js 3D product configurator, dual payment processing, and Firebase backend.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">NexusWeb3</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="/" class="nav__link">Home</a>
+                <a href="../portfolio.html" class="nav__link nav__link--active">Portfolio</a>
+                <a href="../methodology.html" class="nav__link">Methodology</a>
+                <a href="../pricing.html" class="nav__link">Pricing</a>
+                <a href="../about.html" class="nav__link">About</a>
+                <a href="../contact.html" class="nav__cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container--narrow">
+                <div class="breadcrumb">
+                    <a href="../portfolio.html">Portfolio</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>Hardwood Wedges Shop</span>
+                </div>
+                <h1>Hardwood Wedges Shop</h1>
+                <p class="case-hero__tagline">An e-commerce store where customers configure custom hardwood wedges in 3D before buying — with seamless dual payment processing.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container--narrow">
+                <div class="case-section">
+                    <h2>The Problem</h2>
+                    <p>Selling custom physical products online is hard when customers cannot see what they are getting. Standard product photos do not convey the variety of wood types, sizes, and configurations available. Customers want to visualize their specific combination before committing to a purchase.</p>
+                    <p>The client needed an online store that went beyond static images — one that let customers interact with the product, choose their options, see the result in real-time, and check out without friction.</p>
+                    <p>Additionally, the store needed to accept both Stripe and PayPal to maximize conversion rates across different customer payment preferences.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Our Solution</h2>
+                    <p>We built a React-based e-commerce store with an interactive Three.js 3D product configurator. Customers select wood type, size, quantity, and finish — and see a photorealistic 3D model update in real-time as they make choices.</p>
+                    <p>The configurator runs entirely in the browser with no server-side rendering needed for the 3D experience. Firebase handles the backend: product catalog, order management, user authentication, and inventory tracking.</p>
+                    <p>Dual payment integration means customers can choose between Stripe (credit/debit cards) and PayPal at checkout, with order confirmation and tracking emails triggered automatically.</p>
+                </div>
+
+                <div class="case-section">
+                    <h2>Tech Stack</h2>
+                    <div class="badges" style="gap: 0.75rem;">
+                        <span class="badge">React</span>
+                        <span class="badge--orange badge">Three.js</span>
+                        <span class="badge--green badge">Stripe</span>
+                        <span class="badge--violet badge">PayPal</span>
+                        <span class="badge">Firebase</span>
+                        <span class="badge">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Key Features</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h4>3D Product Configurator</h4>
+                            <p>Interactive Three.js scene where customers rotate, zoom, and customize their wedge — wood type, size, finish — with instant visual feedback.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Dual Payment Processing</h4>
+                            <p>Stripe for cards and PayPal for account-based payments. Both fully integrated with order management and confirmation flows.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Firebase Backend</h4>
+                            <p>Real-time database for product catalog and orders, Firebase Auth for admin access, Cloud Functions for order processing triggers.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Responsive Design</h4>
+                            <p>Full mobile support including touch-friendly 3D controls, responsive product grid, and streamlined mobile checkout flow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-section">
+                    <h2>Results</h2>
+                    <div class="grid-3" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-card__number">3D</div>
+                            <div class="stat-card__label">Product Configurator</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">2</div>
+                            <div class="stat-card__label">Payment Methods</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">60fps</div>
+                            <div class="stat-card__label">3D Performance</div>
+                        </div>
+                    </div>
+                    <p>The 3D configurator increased customer confidence in purchases and reduced support questions about product specifications. Offering both Stripe and PayPal options improved checkout completion rates.</p>
+                </div>
+
+                <div class="cta-banner mt-8">
+                    <h2>Need a Custom E-Commerce Experience?</h2>
+                    <p>We build interactive shopping experiences with 3D visualization, custom configurators, and seamless payments.</p>
+                    <a href="../contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>NexusWeb3 AI Solutions</p>
+            <div class="footer-links">
+                <a href="https://github.com/nexusweb3dev" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener">Twitter</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
