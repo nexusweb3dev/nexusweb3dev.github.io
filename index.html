@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta property="og:title" content="NexusWeb3 AI Solutions — Custom AI Systems That Replace Expensive SaaS">
+    <meta property="og:description" content="We build custom AI systems that replace your expensive SaaS stack. 9+ production projects shipped. Try our interactive demos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexusweb3dev.github.io/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
 </head>
 <body>
     <header class="site-header">
@@ -23,6 +28,7 @@
                 <a href="methodology.html" class="nav__link">Methodology</a>
                 <a href="pricing.html" class="nav__link">Pricing</a>
                 <a href="about.html" class="nav__link">About</a>
+                <a href="#demos" class="nav__link">Demos</a>
                 <a href="contact.html" class="nav__cta">Contact</a>
             </nav>
         </div>
@@ -36,6 +42,7 @@
                 <p>Custom AI agents, automation workflows, and intelligent dashboards. One-time build cost. No monthly subscriptions. Runs 24/7 on your infrastructure.</p>
                 <div class="hero__actions">
                     <a href="contact.html" class="btn-primary btn-lg">Book Discovery Call</a>
+                    <a href="#demos" class="btn-secondary btn-lg">Try a Demo</a>
                     <a href="portfolio.html" class="btn-secondary btn-lg">View Our Work</a>
                 </div>
             </div>
@@ -106,6 +113,82 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- Interactive Demos -->
+        <section id="demos" class="section section--bg" style="scroll-margin-top: 80px;">
+            <div class="container">
+                <h2 class="text-center mb-3">See Our AI Systems in Action</h2>
+                <p class="subtitle subtitle--centered mb-6">Real AI logic running in your browser. No login required.</p>
+
+                <div class="demo-tabs">
+                    <button class="demo-tab demo-tab--active" data-demo="sales">Sales Agent</button>
+                    <button class="demo-tab" data-demo="content">Content Machine</button>
+                    <button class="demo-tab" data-demo="support">Support Bot</button>
+                </div>
+
+                <!-- Sales Agent Demo -->
+                <div class="demo-panel demo-panel--active" id="demo-sales">
+                    <div class="demo-form" id="demo-sales-form">
+                        <div class="form-group">
+                            <label for="demo-sales-name">Your Name</label>
+                            <input type="text" id="demo-sales-name" placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-sales-email">Email</label>
+                            <input type="email" id="demo-sales-email" placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-sales-company">Company</label>
+                            <input type="text" id="demo-sales-company" placeholder="Acme Inc">
+                        </div>
+                        <div class="form-group">
+                            <label for="demo-sales-message">What do you need?</label>
+                            <textarea id="demo-sales-message" placeholder="We need an AI chatbot for our enterprise SaaS platform to handle customer support. Budget is around $10k and we need it ASAP before our product launch next month."></textarea>
+                        </div>
+                        <button type="button" class="btn-primary" onclick="window.demoScoreLead()">Score This Lead</button>
+                    </div>
+                    <div id="demo-sales-result"></div>
+                </div>
+
+                <!-- Content Machine Demo -->
+                <div class="demo-panel" id="demo-content">
+                    <div class="demo-content-topics" id="demo-content-topics"></div>
+                    <div class="demo-content-tabs" id="demo-content-tabs" style="display:none;">
+                        <button class="demo-content-tab demo-content-tab--active" data-platform="blog">Blog</button>
+                        <button class="demo-content-tab" data-platform="twitter">Twitter</button>
+                        <button class="demo-content-tab" data-platform="linkedin">LinkedIn</button>
+                    </div>
+                    <div class="demo-content-display" id="demo-content-display">
+                        <p class="text-secondary text-center" style="padding: 3rem 0;">Pick a topic above to see AI-generated content appear.</p>
+                    </div>
+                    <div class="demo-content-meta" id="demo-content-meta"></div>
+                </div>
+
+                <!-- Support Bot Demo -->
+                <div class="demo-panel" id="demo-support">
+                    <div class="demo-chat">
+                        <div class="demo-chat__header">
+                            <div class="demo-chat__status"></div>
+                            <div class="demo-chat__title">NexusWeb3 Support Bot</div>
+                            <span class="vps-status live-only"><span class="vps-status__dot" id="vps-status-dot"></span> Live API</span>
+                        </div>
+                        <div class="demo-chat__messages" id="demo-chat-messages">
+                            <div class="demo-chat__bubble demo-chat__bubble--bot">Hi! I'm the NexusWeb3 support bot. Ask me anything about our AI solutions, pricing, or process.</div>
+                        </div>
+                        <div class="demo-chat__input-wrap">
+                            <input class="demo-chat__input" id="demo-chat-input" type="text" placeholder="Ask a question..." autocomplete="off">
+                            <button class="demo-chat__send" id="demo-chat-send">Send</button>
+                        </div>
+                        <div class="demo-chat__chips" id="demo-chat-chips">
+                            <button class="demo-chat__chip" data-msg="What do you build?">What do you build?</button>
+                            <button class="demo-chat__chip" data-msg="How much does it cost?">How much does it cost?</button>
+                            <button class="demo-chat__chip" data-msg="How long to deliver?">How long to deliver?</button>
+                            <button class="demo-chat__chip" data-msg="Can I see examples?">Can I see examples?</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -245,6 +328,54 @@
             </div>
         </section>
 
+        <!-- Trust Signals -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-8">Why Clients Choose Us</h2>
+                <div class="grid-3">
+                    <div class="trust-card">
+                        <div class="trust-card__icon">&#128272;</div>
+                        <div class="trust-card__title">You Own the Code</div>
+                        <div class="trust-card__desc">Every line of code is yours. No vendor lock-in. No monthly license. Full source code, documentation, and deployment rights included.</div>
+                    </div>
+                    <div class="trust-card">
+                        <div class="trust-card__icon">&#9881;</div>
+                        <div class="trust-card__title">Your Infrastructure</div>
+                        <div class="trust-card__desc">Runs on your servers, your cloud, your rules. No data leaves your environment unless you want it to. Full control, always.</div>
+                    </div>
+                    <div class="trust-card">
+                        <div class="trust-card__icon">&#128176;</div>
+                        <div class="trust-card__title">Transparent Pricing</div>
+                        <div class="trust-card__desc">Fixed project cost. No surprises. No scope creep charges. 50% upfront, 50% on delivery. Money-back if requirements aren't met.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After Scenarios -->
+        <section class="section section--bg">
+            <div class="container">
+                <h2 class="text-center mb-8">Real Transformations</h2>
+                <div class="grid-3">
+                    <div class="scenario-card">
+                        <div class="scenario-card__title">Customer Support</div>
+                        <div class="scenario-card__before"><strong>Before:</strong> 3 support agents at $8K/mo. 12-hour average response time. Inconsistent answers.</div>
+                        <div class="scenario-card__after"><strong>After:</strong> AI support bot. $4K one-time build. Instant 24/7 responses. 80% ticket deflection.</div>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-card__title">Sales Pipeline</div>
+                        <div class="scenario-card__before"><strong>Before:</strong> Manual lead scoring. Sales team wastes 60% of time on unqualified leads. $2K/mo CRM tool.</div>
+                        <div class="scenario-card__after"><strong>After:</strong> AI lead qualifier. $3K one-time. Scores leads instantly. 3x conversion rate. No monthly fee.</div>
+                    </div>
+                    <div class="scenario-card">
+                        <div class="scenario-card__title">Content Production</div>
+                        <div class="scenario-card__before"><strong>Before:</strong> 3 content writers at $15K/mo. 8 blog posts per month. Manual social media scheduling.</div>
+                        <div class="scenario-card__after"><strong>After:</strong> AI content machine. $5K one-time. 30+ posts/mo across blog, Twitter, LinkedIn. Auto-scheduled.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Banner -->
         <section class="section">
             <div class="container">
@@ -267,5 +398,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/demos.js"></script>
+    <script src="js/live-bridge.js"></script>
 </body>
 </html>

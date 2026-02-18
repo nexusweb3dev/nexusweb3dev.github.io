@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta property="og:title" content="Contact | NexusWeb3 AI Solutions">
+    <meta property="og:description" content="Book a free discovery call or send us a message. We build custom AI systems starting at $2,000.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexusweb3dev.github.io/contact.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9889;</text></svg>">
 </head>
 <body>
     <header class="site-header">
@@ -23,6 +28,7 @@
                 <a href="methodology.html" class="nav__link">Methodology</a>
                 <a href="pricing.html" class="nav__link">Pricing</a>
                 <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#demos" class="nav__link">Demos</a>
                 <a href="contact.html" class="nav__cta">Contact</a>
             </nav>
         </div>
@@ -43,12 +49,13 @@
                     <div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 2rem;">Book a Discovery Call</h2>
 
-                        <!-- Cal.com placeholder -->
                         <div class="card mb-4" style="text-align: center; padding: 3rem 2rem;">
-                            <h3 class="mb-2">Free 30-Minute Call</h3>
-                            <p class="text-secondary mb-4">Pick a time that works for you.</p>
-                            <a href="https://cal.com" target="_blank" rel="noopener" class="btn-primary">Schedule on Cal.com</a>
-                            <p class="text-tertiary" style="margin-top: 1rem; font-size: 0.85rem;">Booking link will be updated once the Cal.com account is set up.</p>
+                            <h3 class="mb-2">Ready to Talk?</h3>
+                            <p class="text-secondary mb-4">Reach out via your preferred channel.</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <a href="mailto:nexusweb3dev@gmail.com" class="btn-primary" style="text-align: center;">Email Us</a>
+                                <a href="https://x.com/InfoNexusweb3" target="_blank" rel="noopener" class="btn-secondary" style="text-align: center;">DM on X / Twitter</a>
+                            </div>
                         </div>
 
                         <h3 class="mb-3" style="margin-top: 2.5rem;">Prefer to Message Directly?</h3>
@@ -73,20 +80,35 @@
                     <!-- Right: Quick Form + What to Expect -->
                     <div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 2rem;">Send a Quick Message</h2>
-                        <form action="mailto:nexusweb3dev@gmail.com" method="post" enctype="text/plain">
+                        <form id="contact-form" onsubmit="return false;">
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" placeholder="Your name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" id="email" name="email" placeholder="you@company.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">What do you need built?</label>
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your company name">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select your budget range</option>
+                                    <option value="$2K-$5K">$2,000 - $5,000 (AI Agent Sprint)</option>
+                                    <option value="$5K-$15K">$5,000 - $15,000 (AI Workflow System)</option>
+                                    <option value="$15K-$30K">$15,000 - $30,000 (AI Operations Center)</option>
+                                    <option value="exploring">Just exploring options</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">What do you need built? *</label>
                                 <textarea id="message" name="message" placeholder="Brief description of your project or problem..." required></textarea>
                             </div>
-                            <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+                            <button type="submit" class="btn-primary" id="contact-submit" style="width: 100%; text-align: center;">Send Inquiry</button>
+                            <div id="contact-result"></div>
                         </form>
 
                         <div class="mt-8">
@@ -131,5 +153,63 @@
             </div>
         </div>
     </footer>
+    <script>
+    (function() {
+        'use strict';
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('contact-result');
+        const submitBtn = document.getElementById('contact-submit');
+
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            result.innerHTML = '';
+
+            const data = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                company: document.getElementById('company').value.trim(),
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value.trim(),
+                source: 'website_contact_form'
+            };
+
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(function() { controller.abort(); }, 10000);
+
+                const resp = await fetch('http://76.13.76.70:8888/api/inquiry', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    signal: controller.signal
+                });
+                clearTimeout(timeout);
+
+                if (resp.ok) {
+                    const json = await resp.json();
+                    form.style.display = 'none';
+                    result.innerHTML = '<div class="form-success">' +
+                        '<h3>Thanks, ' + data.name.split(' ')[0] + '!</h3>' +
+                        '<p>Your inquiry is <strong>#' + (json.lead_id || 'received') + '</strong>. Our AI architect is reviewing your needs — expect a response within 2 hours.</p>' +
+                        '</div>';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                result.innerHTML = '<div class="form-error">' +
+                    'Could not reach our server. Please email us directly at ' +
+                    '<a href="mailto:nexusweb3dev@gmail.com">nexusweb3dev@gmail.com</a> or ' +
+                    '<a href="https://x.com/InfoNexusweb3" target="_blank">DM us on Twitter</a>.' +
+                    '</div>';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry';
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
