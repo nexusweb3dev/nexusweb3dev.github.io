@@ -46,11 +46,11 @@
 
 | # | Title | Status | Draft Date | Publish Date | Slug | Author |
 |---|-------|--------|------------|-------------|------|--------|
-| 1 | The Anatomy of a Bridge Hack | DRAFT | 2026-02-14 | TBD | anatomy-bridge-hack | ATLAS |
+| 1 | The Anatomy of a Bridge Hack | DRAFT | 2026-02-14 | TBD | anatomy-bridge-hack | Content Team |
 
 **Notes:**
 - Post #1 covers Saga $7M exploit + $1.85B bridge exploit history
 - Foundational series #2 (total 8 planned in series)
 - Word count: ~5,200 words
 - Code examples: 8 Solidity snippets
-- Ready for ORACLE/NEXUS review + publishing
+- Ready for QA review + publishing
