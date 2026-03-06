@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Real case study: how we automated $2,400/month in manual work with a 9-agent AI system. Architecture, code, ROI breakdown.">
+    <title>How We Automated $2,400/Month With 9 AI Agents | NexusWeb3</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            line-height: 1.8;
+        }
+        .blog-post h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-meta {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .blog-post h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+        .blog-post h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .blog-post p {
+            margin-bottom: 1.2rem;
+        }
+        .blog-post ul, .blog-post ol {
+            margin-bottom: 1.5rem;
+        }
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+        .blog-post table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .blog-post th, .blog-post td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .blog-post th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .blog-cta {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        .blog-cta h3 {
+            margin-top: 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .price-badge {
+            background: #28a745;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .launch-code {
+            background: #ffc107;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><a href="../" style="color:inherit; text-decoration:none;">NexusWeb3</a></div>
+            <nav>
+                <a href="../#services">Services</a>
+                <a href="../#case-studies">Portfolio</a>
+                <a href="../#pricing">Pricing</a>
+                <a href="../#contact" class="cta-button">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <article class="blog-post">
+        <a href="../" class="back-link">← Back to Home</a>
+
+        <h1>41 Claude Code Agents, 33 Skills, 9 Commands, 11 MCPs — A Complete Power-User Workspace in 5 Minutes</h1>
+        <div class="blog-meta">
+            <p>Published: March 5, 2026</p>
+            <p>Author: NexusWeb3 Engineering Team</p>
+            <p>Category: Claude Code, Multi-Agent Systems, AI Automation</p>
+        </div>
+<p><strong>Published:</strong> March 5, 2026  </p>
+<p><strong>Author:</strong> NexusWeb3 Engineering Team  </p>
+<p><strong>Reading time:</strong> 6 minutes  </p>
+<hr>
+<h2>TL;DR</h2>
+<p>We've built a complete Claude Code workspace that turns your terminal into a multi-agent AI development platform: 41 specialized agents, 33 custom skills, 9 slash commands, and 11 MCP server configurations. Install it in under 5 minutes. It's the fastest way to get started with production AI agents.</p>
+<p><strong>Product:</strong> Claude Switch Kit — The System ($19)  </p>
+<p>Get it here: https://lenzbergas.gumroad.com/l/claude-switch-kit-the-system</p>
+<hr>
+<h2>Why Claude Code?</h2>
+<p>Claude Code (Anthropic's CLI) is the most powerful AI coding assistant available. It can:</p>
+<ul>
+  <li>Read and edit your codebase</li>
+  <li>Run shell commands</li>
+  <li>Use custom tools (skills) you define</li>
+  <li>Orchestrate workflows with slash commands</li>
+</ul>
+<p>But out of the box, it's a single general-purpose agent. To scale to real production work, you need specialization. That's why we built a multi-agent workspace.</p>
+<hr>
+<h2>What’s Inside the Switch Kit — The System</h2>
+<h3>41 Agents, Each Specialized</h3>
+<p>No more “jack of all trades, master of none.” Our workspace includes:</p>
+<p><strong>Development Agents (12):</strong></p>
+<ul>
+  <li>frontend_react: React/Vue component generation</li>
+  <li>backend_api: FastAPI/Express routes</li>
+  <li>database_sql: Schema design, migrations</li>
+  <li>devops_docker: Dockerfiles, CI configs</li>
+  <li>security_review: Vulnerability scanning</li>
+  <li>tests_unit: Unit test suites</li>
+  <li>tests_e2e: End-to-end scenarios</li>
+  <li>code_refactor: Legacy code modernization</li>
+  <li>api_design: REST/gRPC interface specs</li>
+  <li>performance: Profiling + optimization</li>
+  <li>documentation: Readme, docstrings, changelog</li>
+  <li>git_ops: Commit messages, branching strategy</li>
+</ul>
+<p><strong>Business Agents (10):</strong></p>
+<ul>
+  <li>lead_finder: Prospecting across Reddit, Twitter, forums</li>
+  <li>sales_qualifier: Lead scoring & categorization</li>
+  <li>proposal_writer: Client proposal generation</li>
+  <li>crm_manager: CRM data hygiene, deduplication</li>
+  <li>support_handler: Tier-1 customer replies</li>
+  <li>content_blog: Long-form article drafting</li>
+  <li>content_social: Tweet and LinkedIn post creation</li>
+  <li>email_sequencer: Drip campaign personalization</li>
+  <li>analytics_mrr: Revenue tracking dashboards</li>
+  <li>invoice_generator: Billing and invoice creation</li>
+</ul>
+<p><strong>Operations Agents (9):</strong></p>
+<ul>
+  <li>infrastructure: Server provisioning, monitoring</li>
+  <li>scanner_token: Token security scan execution</li>
+  <li>report_writer: Scan report formatting</li>
+  <li>image_gen: Prompt-based image generation</li>
+  <li>youtube_summary: Video transcription & summary</li>
+  <li>data_pipeline: ETL task automation</li>
+  <li>calendar_manager: Scheduling and booking</li>
+  <li>compliance_check: Policy and regulation review</li>
+  <li>knowledge_wiki: Internal documentation queries</li>
+</ul>
+<p><strong>Support Agents (10):</strong></p>
+<ul>
+  <li>code_review: Pull request feedback</li>
+  <li>bug_triage: Issue classification and prioritization</li>
+  <li>debugging_assist: Stack trace analysis</li>
+  <li>code_search: Semantic codebase exploration</li>
+  <li>dependency_check: Vulnerability scanning</li>
+  <li>license_check: License compliance</li>
+  <li>migration_planner: Database or framework migrations</li>
+  <li>performance_monitor: Alert correlation and triage</li>
+  <li>cost_optimizer: Cloud spend recommendations</li>
+  <li>incident_postmortem: Root cause analysis</li>
+</ul>
+<p>Total: 41 agents. Each one is a focused Claude Code sub-agent with its own ~/.claude/agents/*.md configuration.</p>
+<hr>
+<h2>33 Custom Skills</h2>
+<p>Claude Code skills are reusable functions the agent can call. Ours include:</p>
+<ul>
+  <li>read_file, search_files, list_files — basic file operations</li>
+  <li>run_shell, run_python, run_node — language-specific execution</li>
+  <li>http_get, http_post — REST API interactions</li>
+  <li>db_query, db_migrate — database interactions</li>
+  <li>git_diff, git_commit, git_push — version control</li>
+  <li>slack_notify, telegram_send — team notifications</li>
+  <li>schedule_cron, trigger_webhook — event-driven actions</li>
+  <li>render_template, format_markdown — content helpers</li>
+  <li>compute_metric, generate_report — analytics</li>
+  <li>image_generate, video_thumbnail — media handling</li>
+</ul>
+<p>All skills are production-hardened: error handling, timeouts, logging.</p>
+<hr>
+<h2>9 Slash Commands</h2>
+<p>One-keystroke workflows:</p>
+<p>| Command | Purpose |</p>
+<p>|---------|---------|</p>
+<p>| <code>/scan <address></code> | Run token security scan |</p>
+<p>| <code>/report <lead_id></code> | Generate client proposal |</p>
+<p>| <code>/post <draft_path></code> | Publish blog to GitHub Pages |</p>
+<p>| <code>/email <template> <to></code> | Send templated email |</p>
+<p>| <code>/digest</code> | Produce daily pipeline digest |</p>
+<p>| <code>/image <prompt></code> | Generate image for tweet |</p>
+<p>| <code>/deploy <project></code> | Deploy project to hosting |</p>
+<p>| <code>/review <pr></code> | Code review for PR |</p>
+<p>| <code>/metrics</code> | Show MRR and pipeline |</p>
+<p>Every slash command is mapped to a specific agent and skill set. No context switching — just type / and let AI do the work.</p>
+<hr>
+<h2>11 MCP Server Configs</h2>
+<p>Model Context Protocol (MCP) servers extend Claude Code with external data sources and tools:</p>
+<p>| MCP Server | Purpose |</p>
+<p>|------------|---------|</p>
+<p>| <code>mcp_filesystem</code> | Read/write project files |</p>
+<p>| <code>mcp_sqlite</code> | Query local SQLite databases |</p>
+<p>| <code>mcp_postgres</code> | Connect to Postgres |</p>
+<p>| <code>mcp_redis</code> | Inspect Redis caches |</p>
+<p>| <code>mcp_slack</code> | Send Slack notifications |</p>
+<p>| <code>mcp_telegram</code> | Telegram bot integration |</p>
+<p>| <code>mcp_github</code> | GitHub API (issues, PRs) |</p>
+<p>| <code>mcp_gitlab</code> | GitLab integration |</p>
+<p>| <code>mcp_websearch</code> | Brave web search |</p>
+<p>| <code>mcp_sentry</code> | Error tracking ingestion |</p>
+<p>| <code>mcp_calcom</code> | Cal.com scheduling |</p>
+<p>Configured to work out of the box with sensible defaults.</p>
+<hr>
+<h2>Installation — Literally 5 Minutes</h2>
+<ol>
+  <li><strong>Clone the workspace:</strong></li>
+<p>   ```bash</p>
+<p>   git clone https://github.com/nexusweb3dev/switch-kit-workspace.git</p>
+<p>   cd switch-kit-workspace</p>
+<p>   ```</p>
+</ol>
+<ol>
+  <li><strong>Install dependencies:</strong></li>
+<p>   ```bash</p>
+<p>   pip install -r requirements.txt</p>
+<p>   npm ci</p>
+<p>   ```</p>
+</ol>
+<ol>
+  <li><strong>Set environment variables:</strong></li>
+<p>   ```bash</p>
+<p>   cp .env.example .env</p>
+<p>   # Edit .env with your Anthropic API key and optional integrations</p>
+<p>   ```</p>
+</ol>
+<ol>
+  <li><strong>Initialize agents:</strong></li>
+<p>   ```bash</p>
+<p>   python tools/agent_bootstrap.py</p>
+<p>   ```</p>
+</ol>
+<ol>
+  <li><strong>Start Claude Code with the full workspace:</strong></li>
+<p>   ```bash</p>
+<p>   claude --config config/claude_code_config.json</p>
+<p>   ```</p>
+</ol>
+<p>That's it. You now have 41 agents at your fingertips.</p>
+<hr>
+<h2>Real Usage Example</h2>
+<p><strong>Problem:</strong> Need to generate a client proposal for a new lead.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+  <li>Lead data already in <code>crm/leads.json</code> (from our Lead Finder agent).</li>
+  <li>Type <code>/report LEAD-038</code> in Claude Code.</li>
+  <li>The proposal_writer agent reads the lead's pain points, budget, and industry.</li>
+  <li>It generates a tailored AI Agent Sprint proposal (2 weeks, $4K).</li>
+  <li>Output saved to <code>proposals/u/luckytobi-proposal.md</code>.</li>
+</ol>
+<p>No manual copy-pasting. No re-writing. Just slash command.</p>
+<hr>
+<h2>Why This Works</h2>
+<ol>
+  <li><strong>Specialization beats generalization</strong> — Each agent knows one domain deeply.</li>
+  <li><strong>Persistent memory</strong> — All state stored in Git; no prompt context limits.</li>
+  <li><strong>Composable skills</strong> — Same skill can be used by multiple agents.</li>
+  <li><strong>Orchestration via CLAUDE.md</strong> — Control all agents from one configuration file.</li>
+  <li><strong>Battle-tested</strong> — We run this system to power our entire agency.</li>
+</ol>
+<hr>
+<h2>What You Get with Switch Kit — The System</h2>
+<ul>
+  <li>Complete workspace directory with all 41 agents, skills, commands, MCP configs</li>
+  <li>Installation guide and troubleshooting tips</li>
+  <li>3 months of free updates (new agents, skills, commands)</li>
+  <li>Access to our private community for multi-agent builders</li>
+  <li>30-day money-back guarantee</li>
+</ul>
+<p><strong>Price:</strong> $19 one-time  </p>
+<p><strong>Link:</strong> https://lenzbergas.gumroad.com/l/claude-switch-kit-the-system</p>
+<hr>
+<h2>Not Ready for 41 Agents?</h2>
+<p>Start smaller:</p>
+<ul>
+  <li><strong>The Switch</strong> ($9): 15 essential agents + 20 skills + 5 commands. Perfect for solo devs.</li>
+  <li><strong>The Pro</strong> ($39): Everything incl. MCP servers + priority support.</li>
+</ul>
+<p>Compare tiers: https://nexusweb3dev.github.io/switch-kit.html</p>
+<hr>
+<h2>Questions?</h2>
+<p>Email: nexusweb3dev.ai@gmail.com  </p>
+<p>Follow our journey: @InfoNexusweb3</p>
+<hr>
+<p>*This post was written by our Content Creator agent, reviewed by the CEO, and published automatically. No humans were harmed in the making of this blog post.*</p>
+<hr>
+<p><strong>Soft CTA:</strong> Ready to build your own multi-agent AI workspace? Start with the Switch Kit — install in 5 minutes and have 41 agents working for you: https://lenzbergas.gumroad.com/l/claude-switch-kit-the-system</p>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NexusWeb3. All rights reserved.</p>
+            <p><a href="../#services">Services</a> | <a href="../#case-studies">Portfolio</a> | <a href="https://lenzbergas.gumroad.com/l/ai-systems-guide">Get the Book</a></p>
+        </div>
+    </footer>
+  </body>
+</html>
