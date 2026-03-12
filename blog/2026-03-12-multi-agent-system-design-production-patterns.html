@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Production patterns for multi-agent AI systems: model routing, Git-based memory, graceful degradation, cost governance. Real architecture from 9 running agents.">
+    <title>Multi-Agent System Design: Production Patterns from 9 Running Agents | NexusWeb3</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            line-height: 1.8;
+        }
+        .blog-post h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-meta {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .blog-post h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+        .blog-post h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .blog-post p {
+            margin-bottom: 1.2rem;
+        }
+        .blog-post ul, .blog-post ol {
+            margin-bottom: 1.5rem;
+        }
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+        .blog-post table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .blog-post th, .blog-post td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .blog-post th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .blog-cta {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        .blog-cta h3 {
+            margin-top: 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .price-badge {
+            background: #28a745;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <article class="blog-post">
+        <a href="/blog.html" class="back-link">← Back to Blog</a>
+
+        <h1>Multi-Agent System Design: Production Patterns from 9 Running Agents</h1>
+        <p class="blog-meta">Draft: Mar 12, 2026 | Reading time: 10 minutes</p>
+
+        <h2>TL;DR</h2>
+        <p>We run 9 autonomous AI agents 24/7 for $43/month. Here's the architecture that makes it possible: model routing, persistent state, error recovery, and cost governance. Full design patterns are in our AI Systems Guide ($29).</p>
+
+        <h2>Why Most Agent Systems Fail</h2>
+        <p>Build a simple agent. It works. Then you add a second. They start stepping on each other's toes.</p>
+        <p>Common failure modes:</p>
+        <ul>
+            <li><strong>Shared state collisions</strong> — Two agents write to the same file simultaneously</li>
+            <li><strong>Cascading failures</strong> — One agent crashes, pulls down the whole workflow</li>
+            <li><strong>Runaway costs</strong> — Unbounded context growth, redundant model calls</li>
+            <li><strong>Context loss on restart</strong> — No persistence, agents forget everything</li>
+            <li><strong>Orchestration bottlenecks</strong> — Everything goes through a single manager</li>
+        </ul>
+        <p>We've hit all of these. Here's how we solved them.</p>
+
+        <h2>Our 9-Agent System Overview</h2>
+        <pre><code>┌─────────────────────────────────────────────────────────────┐
+│                    Orchestrator (stateless)                 │
+├─────────────┬─────────────┬─────────────┬─────────────────┤
+│   Agent A   │   Agent B   │   Agent C   │     ...         │
+│ (Research)  │ (Analysis)  │ (Writing)   │ (9 total)       │
+└─────────────┴─────────────┴─────────────┴─────────────────┘
+         │             │             │
+         └─────────────┴─────────────┘
+                       │
+          ┌────────────▼────────────┐
+          │   Shared Git Memory     │
+          │  (markdown + versioned) │
+          └─────────────────────────┘</code></pre>
+        <p>Agents:</p>
+        <ol>
+            <li><strong>Lead Qualifier</strong> — scores AI leads from Reddit</li>
+            <li><strong>Content Researcher</strong> — gathers trends for tweets/blog</li>
+            <li><strong>Tweet Composer</strong> — drafts daily tweets</li>
+            <li><strong>Blog Writer</strong> — produces long-form content</li>
+            <li><strong>QAReviewer</strong> — checks OPSEC, quality</li>
+            <li><strong>Image Generator</strong> — creates visuals for content</li>
+            <li><strong>Pipeline Reporter</strong> — runs daily digest</li>
+            <li><strong>Knowledge Synthesizer</strong> — night cross-pattern analysis</li>
+            <li><strong>Orchestrator</strong> — schedules and dispatches work</li>
+        </ol>
+        <p>All agents are Claude Code custom instructions + skills. No external framework.</p>
+
+        <h2>Pattern 1: Model Routing by Task Type</h2>
+        <p>Not every task needs GPT-4o. We route:</p>
+        <table>
+            <tr><th>Agent Type</th><th>Model</th><th>Cost/1M tokens</th><th>When Used</th></tr>
+            <tr><td>Research/Qualification</td><td>Claude Haiku</td><td>$0.15</td><td>High-volume, low-complexity</td></tr>
+            <tr><td>Content Drafting</td><td>Claude Sonnet 3.7</td><td>$1.50</td><td>Medium quality, creative</td></tr>
+            <tr><td>Final QA/Client Deliverables</td><td>Claude Opus 4</td><td>$15.00</td><td>Highest reliability</td></tr>
+        </table>
+        <p>Result: $430/month → $43/month with 90% savings.</p>
+        <p>Implementation: Simple Python router based on agent profile.</p>
+
+        <h2>Pattern 2: Persistent Memory via Git + Markdown</h2>
+        <p>We tried databases. Too complex. Markdown files in a Git repo:</p>
+        <ul>
+            <li>Each agent has its own <code>memory/</code> folder</li>
+            <li>All writes are atomic commits (file lock prevents collisions)</li>
+            <li>History is automatically versioned</li>
+            <li>Easy to inspect, diff, rollback</li>
+        </ul>
+        <pre><code>with git_lock('memory/lead_qualifier.md'):
+    append_memory('processed_leads', lead_id)
+    git_commit('Lead qualifier update')</code></pre>
+        <p>Downside: Git operations add ~200ms latency. Acceptable for our throughput (few writes/hour).</p>
+
+        <h2>Pattern 3: Graceful Degradation</h2>
+        <p>When an agent fails, the system doesn't crash.</p>
+        <p>Retry policy:</p>
+        <ol>
+            <li>Immediate retry (same model, same prompt) — transient errors</li>
+            <li>Fallback to cheaper model — quality acceptable</li>
+            <li>Alert to human via Telegram</li>
+        </ol>
+        <p>Example: Image generator fails → retry 2x → fallback to text-only plan → notify.</p>
+        <p>No single point of failure.</p>
+
+        <h2>Pattern 4: Cost Governance</h2>
+        <p>We enforce:</p>
+        <ul>
+            <li><strong>Daily budget per agent</strong> (prevents runaway loops)</li>
+            <li><strong>Context token limit</strong> (hard cap at 8K tokens for routine work)</li>
+            <li><strong>Model whitelist</strong> (no surprise $15 calls)</li>
+            <li><strong>Usage logging</strong> to <code>costs/</code> CSV for weekly review</li>
+        </ul>
+        <p>Our bill stayed under $50/month for 9 agents running continuously.</p>
+
+        <h2>Pattern 5: Human-in-the-Loop Checkpoints</h2>
+        <p>Fully autonomous is dangerous. We insert human approvals at:</p>
+        <ul>
+            <li><strong>Proposal send</strong> (CEO reviews Reddit DMs)</li>
+            <li><strong>Blog publication</strong> (SENTINEL QA, NEXUS deploy)</li>
+            <li><strong>Token scan reports</strong> (manual code review before delivery)</li>
+        </ul>
+        <p>Everything else runs hands-off.</p>
+
+        <h2>The Real Numbers</h2>
+        <p>9 agents × 24/7 operation:</p>
+        <ul>
+            <li>Model costs: $43/mo</li>
+            <li>Infrastructure (VPS): $5/mo</li>
+            <li>Developer time to build: 140 hours (our time, no cost)</li>
+            <li>Maintenance: ~1 hour/week</li>
+        </ul>
+        <p>That's $48/mo for an AI operations center that would cost $15K/mo if done by humans.</p>
+
+        <h2>Trade-offs and Limitations</h2>
+        <ul>
+            <li><strong>Not real-time</strong> — Agents run on schedules (minute to hourly)</li>
+            <li><strong>No streaming</strong> — Batch processing only</li>
+            <li><strong>Simple orchestration</strong> — Cron-driven, no DAG</li>
+            <li><strong>Language-bound</strong> — All Claude Code; no cross-model agents</li>
+        </ul>
+        <p>Works for us because our tasks are asynchronous: content production, lead processing, reporting.</p>
+
+        <h2>Ready to Build Your Own System?</h2>
+        <p>We've packaged our complete multi-agent design in the <strong>AI Systems Guide</strong>.</p>
+        <p>Inside:</p>
+        <ul>
+            <li>Full architecture diagrams (7 systems)</li>
+            <li>Code templates for 5 agent types</li>
+            <li>Cost governance implementation</li>
+            <li>Persistent memory patterns (Git-based and alternatives)</li>
+            <li>Error recovery strategies</li>
+            <li>Human-in-the-loop integration points</li>
+            <li>Scaling from 3 to 10+ agents</li>
+            <li>Security hardening checklist</li>
+        </ul>
+        <p>61,000 words. No theory — production patterns from running 9 agents 24/7.</p>
+        <p><strong>Price:</strong> <span class="price-badge">$29</span> (one-time)<br>
+        <strong>Link:</strong> <a href="https://lenzbergas.gumroad.com/l/ai-systems-guide">https://lenzbergas.gumroad.com/l/ai-systems-guide</a></p>
+
+        <div class="blog-cta">
+            <h3>Get the AI Systems Guide</h3>
+            <p>Learn exactly how we run 9 agents for $43/month. Deploy your own multi-agent system in days, not months.</p>
+            <p><a href="https://lenzbergas.gumroad.com/l/ai-systems-guide" class="price-badge">Buy now — $29</a></p>
+        </div>
+
+        <p><a href="/blog.html">← Back to all posts</a></p>
+    </article>
+</body>
+</html>
