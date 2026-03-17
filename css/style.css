@@ -1865,3 +1865,415 @@ h4 {
         flex-wrap: wrap;
     }
 }
+
+/* ============================================================
+   Protocol Infrastructure Styles
+   ============================================================ */
+
+/* Architecture Diagram */
+.arch-diagram {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.arch-layer {
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.arch-layer:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.arch-layer--safety {
+    border-color: rgba(249, 115, 22, 0.4);
+    background: rgba(249, 115, 22, 0.05);
+}
+
+.arch-layer--safety:hover {
+    border-color: var(--accent-orange);
+}
+
+.arch-layer--financial {
+    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.arch-layer--financial:hover {
+    border-color: var(--accent-blue);
+}
+
+.arch-layer--utility {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.arch-layer--utility:hover {
+    border-color: var(--accent-green);
+}
+
+.arch-layer__label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.arch-layer__protocols {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.arch-connector {
+    width: 2px;
+    height: 24px;
+    background: var(--border);
+    margin: 0 auto;
+}
+
+.arch-base {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+/* Protocol Layer */
+.protocol-layer__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.protocol-layer__badge {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.03em;
+}
+
+.protocol-layer__badge--financial {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.protocol-layer__badge--utility {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.protocol-layer__badge--safety {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--accent-orange);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.protocol-layer__range {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+/* Protocol Grid */
+.protocol-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+}
+
+/* Protocol Card */
+.protocol-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.protocol-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-hover);
+    color: inherit;
+}
+
+.protocol-card__name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.protocol-card__desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.protocol-card__fee {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-green);
+    margin-top: auto;
+}
+
+/* Security Properties */
+.security-props {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.security-prop {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.security-prop__check {
+    color: var(--accent-green);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+/* Finding Cards */
+.finding-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.finding-card--critical {
+    border-left: 3px solid #ef4444;
+}
+
+.finding-card--high {
+    border-left: 3px solid var(--accent-orange);
+}
+
+.finding-card--medium {
+    border-left: 3px solid #eab308;
+}
+
+.finding-card__severity {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+}
+
+.finding-card--critical .finding-card__severity { color: #ef4444; }
+.finding-card--high .finding-card__severity { color: var(--accent-orange); }
+.finding-card--medium .finding-card__severity { color: #eab308; }
+
+.finding-card__id {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+.finding-card__title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.finding-card__desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.finding-card__fix {
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+/* Skill Cards */
+.skill-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.skill-card__badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+    align-self: center;
+}
+
+.skill-card__badge--financial {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.skill-card__badge--utility {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.skill-card__badge--safety {
+    background: rgba(249, 115, 22, 0.15);
+    color: var(--accent-orange);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.skill-card__name {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.skill-card__desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.skill-card__cmd {
+    display: block;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    margin-top: auto;
+}
+
+/* Code Block */
+.code-block {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.code-block .code-comment {
+    color: var(--text-tertiary);
+}
+
+/* Stat Card Sub */
+.stat-card__sub {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin-top: 0.25rem;
+}
+
+/* Fee Details (collapsible) */
+.fee-details {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.fee-details__summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.fee-details__summary::-webkit-details-marker {
+    display: none;
+}
+
+.fee-details__summary::before {
+    content: '+';
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--accent-blue);
+    transition: transform var(--transition);
+}
+
+.fee-details[open] .fee-details__summary::before {
+    content: '-';
+}
+
+.fee-table-wrap {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.fee-table-wrap .comparison-table {
+    margin: 0;
+}
+
+/* Protocol Grid Responsive */
+@media (max-width: 1024px) {
+    .protocol-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .protocol-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .security-props {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-layer {
+        padding: 1rem 1.25rem;
+    }
+
+    .arch-layer__protocols {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .protocol-grid {
+        grid-template-columns: 1fr;
+    }
+}
