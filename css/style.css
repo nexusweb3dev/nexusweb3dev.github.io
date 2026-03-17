@@ -2247,6 +2247,79 @@ h4 {
     margin: 0;
 }
 
+/* Credibility Grid */
+.credibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.credibility-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.credibility-card__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.credibility-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.credibility-card__text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Treasury Block */
+.treasury-block {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+}
+
+.treasury-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+}
+
+.treasury-address code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    word-break: break-all;
+}
+
+.treasury-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.treasury-link:hover {
+    color: var(--accent-green);
+}
+
 /* Protocol Grid Responsive */
 @media (max-width: 1024px) {
     .protocol-grid {
@@ -2260,6 +2333,10 @@ h4 {
     }
 
     .security-props {
+        grid-template-columns: 1fr;
+    }
+
+    .credibility-grid {
         grid-template-columns: 1fr;
     }
 
