@@ -2307,10 +2307,23 @@ h4 {
     word-break: break-all;
 }
 
+.treasury-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.treasury-link:hover {
+    color: var(--accent-green);
+}
+
 .treasury-note {
     font-size: 0.8rem;
     color: #505060;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 /* Protocol Grid Responsive */
