@@ -1,49 +1,41 @@
-# NexusWeb3 AI Solutions
+# NexusWeb3 — AI Agent Economy Infrastructure
 
-Custom AI systems that replace expensive SaaS subscriptions and manual workflows.
+30 composable on-chain protocols for autonomous AI agents on Base mainnet.
 
-## What We Build
+## Protocol Categories
 
-**AI Agent Systems** -- Autonomous sales, support, content, and operations agents that work 24/7.
+- **Agent Wallets** — Programmable wallet management for autonomous agents
+- **Identity** — On-chain identity verification and attestation
+- **Payments** — USDC payment rails, escrow, and settlement
+- **Yield** — Automated yield aggregation and strategy execution
+- **Insurance** — Risk pooling and coverage for agent operations
+- **Reputation** — On-chain reputation scoring and trust graphs
+- **Safety Controls** — Kill switches, rate limiting, and emergency stops
 
-**Custom Dashboards** -- Real-time analytics and monitoring platforms tailored to your data.
+## x402 Security API
 
-**Workflow Automation** -- Replace Zapier, manual spreadsheets, and repetitive processes with purpose-built tools.
+15 pay-per-call endpoints powered by the x402 protocol (HTTP 402 + USDC on Base):
 
-**Token Security Scanning** -- Multi-chain smart contract analysis for EVM and Solana tokens.
+| Category | Endpoints | Price Range |
+|----------|-----------|-------------|
+| Security | Token scan, attack surface, PoC, fuzz, patterns, intel, risk score | $0.10 - $5.00 |
+| On-Chain Intelligence | Wallet profile, whale alerts, token info, tx decode | $0.05 - $0.15 |
+| Deployment Tools | Contract deploy, verification | $0.50 - $1.00 |
+| Web Data | Scraping, search | $0.02 - $0.03 |
+
+No API keys. No subscriptions. Agents call, pay on-chain, get results.
 
 ## Tech Stack
 
-**Languages:** Python, JavaScript, TypeScript
+**Smart Contracts:** Solidity, Base L2, USDC
 
-**Frontend:** React, Next.js, Three.js, Tailwind CSS
+**Off-Chain Services:** Python, FastAPI, Docker
 
-**Backend:** FastAPI, Node.js, PostgreSQL, MongoDB, Firebase
+**Security:** Automated scanning, formal verification, economic attack modeling
 
-**AI/ML:** Claude AI, Gemini, LangChain, Custom Agent Frameworks
+## Links
 
-**Blockchain:** Solidity, Ethers.js, Helius, GoPlus, DexScreener
-
-**Infrastructure:** Docker, Linux, GitHub Actions, Telegram Bot API
-
-## Services
-
-| Tier | What You Get | Price Range |
-|------|-------------|-------------|
-| AI Agent Sprint | Single AI agent, basic integration, 2-week delivery | $2,000 - $5,000 |
-| AI Workflow System | Multi-agent system + dashboard, 4 weeks | $5,000 - $15,000 |
-| AI Operations Center | Full autonomous system, 24/7 operation, 6-8 weeks | $15,000 - $30,000 |
-| Token Security Scan | Multi-chain analysis + automated report, 24-48h | $300 - $2,000 |
-
-All projects include source code, documentation, deployment guide, and ongoing support.
-
-## Portfolio
-
-Visit [nexusweb3dev.github.io](https://nexusweb3dev.github.io) to see case studies, live demos, and pricing details.
-
-## Contact
-
-- **Portfolio:** [nexusweb3dev.github.io](https://nexusweb3dev.github.io)
+- **Site:** [nexusweb3dev.github.io](https://nexusweb3dev.github.io)
 - **Twitter/X:** [@InfoNexusweb3](https://twitter.com/InfoNexusweb3)
 - **GitHub:** [nexusweb3dev](https://github.com/nexusweb3dev)
 

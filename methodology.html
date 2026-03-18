@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methodology | NexusWeb3 AI Solutions</title>
-    <meta name="description" content="Our 5-step AI delivery methodology: Audit, Map, Build, Integrate, Operate. How we turn your SaaS costs into owned AI assets.">
+    <title>Methodology | NexusWeb3 — AI Agent Economy Infrastructure</title>
+    <meta name="description" content="How NexusWeb3 protocols are designed, built, and deployed. From security audit to Base mainnet integration.">
+    <meta property="og:title" content="Methodology | NexusWeb3">
+    <meta property="og:description" content="How NexusWeb3 protocols are designed, built, and deployed. From security audit to Base mainnet integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexusweb3dev.github.io/methodology.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -97,8 +101,8 @@
     <main>
         <section class="hero" style="padding-bottom: 2rem;">
             <div class="container">
-                <h1>Our <span class="accent">Methodology</span></h1>
-                <p>A proven 5-step process for turning your SaaS costs and manual workflows into owned AI assets that work 24/7.</p>
+                <h1>Protocol Development <span class="accent">Methodology</span></h1>
+                <p>How we design, audit, and deploy composable on-chain protocols for the AI agent economy.</p>
             </div>
         </section>
 
@@ -108,28 +112,28 @@
                 <div class="methodology-steps mb-8">
                     <div class="methodology-step">
                         <div class="methodology-step__number">1</div>
-                        <div class="methodology-step__title">Audit</div>
-                        <div class="methodology-step__desc">Analyze current costs and pain points.</div>
+                        <div class="methodology-step__title">Research</div>
+                        <div class="methodology-step__desc">Identify gaps in the agent economy stack.</div>
                     </div>
                     <div class="methodology-step">
                         <div class="methodology-step__number">2</div>
-                        <div class="methodology-step__title">Map</div>
-                        <div class="methodology-step__desc">Design the AI replacement architecture.</div>
+                        <div class="methodology-step__title">Design</div>
+                        <div class="methodology-step__desc">Protocol architecture and composability patterns.</div>
                     </div>
                     <div class="methodology-step">
                         <div class="methodology-step__number">3</div>
                         <div class="methodology-step__title">Build</div>
-                        <div class="methodology-step__desc">Develop agents, dashboards, and integrations.</div>
+                        <div class="methodology-step__desc">Smart contracts and off-chain services.</div>
                     </div>
                     <div class="methodology-step">
                         <div class="methodology-step__number">4</div>
-                        <div class="methodology-step__title">Integrate</div>
-                        <div class="methodology-step__desc">Connect to your existing systems.</div>
+                        <div class="methodology-step__title">Audit</div>
+                        <div class="methodology-step__desc">Three-layer security verification.</div>
                     </div>
                     <div class="methodology-step">
                         <div class="methodology-step__number">5</div>
-                        <div class="methodology-step__title">Operate</div>
-                        <div class="methodology-step__desc">Deploy for 24/7 autonomous operation.</div>
+                        <div class="methodology-step__title">Deploy</div>
+                        <div class="methodology-step__desc">Base mainnet with monitoring and documentation.</div>
                     </div>
                 </div>
             </div>
@@ -141,34 +145,34 @@
                 <div class="method-detail">
                     <div class="method-detail__header">
                         <div class="method-detail__number">1</div>
-                        <div class="method-detail__title">Audit</div>
+                        <div class="method-detail__title">Research</div>
                     </div>
-                    <p>Every project starts with understanding your current reality. We map your tech stack, identify SaaS subscriptions, document manual processes, and measure where time and money are being spent.</p>
-                    <p>This is not a superficial survey. We dig into the details:</p>
+                    <p>Every protocol starts with a gap analysis. We study the current state of autonomous agent infrastructure and identify what is missing, broken, or poorly suited for machine-to-machine interactions.</p>
+                    <p>Key research questions:</p>
                     <ul>
-                        <li>What SaaS tools are you paying for? What do they actually do vs. what you use?</li>
-                        <li>What manual processes eat the most time? Where are the bottlenecks?</li>
-                        <li>What data flows between systems? What is automated and what requires human intervention?</li>
-                        <li>What are the pain points your team complains about most?</li>
+                        <li>What do autonomous agents need that does not exist yet?</li>
+                        <li>What existing protocols can be improved for agent-native use?</li>
+                        <li>What are the security attack vectors specific to agent-operated systems?</li>
+                        <li>What gas and latency constraints do high-frequency agent calls impose?</li>
                     </ul>
-                    <div class="deliverable">Deliverable: SaaS Cost Map + Process Audit Document</div>
+                    <div class="deliverable">Deliverable: Gap Analysis + Protocol Specification Draft</div>
                 </div>
 
                 <div class="method-detail">
                     <div class="method-detail__header">
                         <div class="method-detail__number">2</div>
-                        <div class="method-detail__title">Map</div>
+                        <div class="method-detail__title">Design</div>
                     </div>
-                    <p>With the audit complete, we design the AI replacement architecture. This is where we decide what agents do what, how they communicate, what data they need, and how they integrate with your existing systems.</p>
-                    <p>Key decisions at this stage:</p>
+                    <p>Interface-first design. Every protocol exposes a clean ABI that other protocols and agents can call without special adapters. Composability is mandatory — no protocol ships as a standalone island.</p>
+                    <p>Design priorities:</p>
                     <ul>
-                        <li>Agent roles and responsibilities — each agent gets a specific job with clear inputs and outputs</li>
-                        <li>Data architecture — where data lives, how it flows, what needs persistent storage vs. real-time processing</li>
-                        <li>Integration points — which existing systems stay, which get replaced, how we bridge the gaps</li>
-                        <li>Model selection — premium models for critical decisions, cost-effective models for routine tasks</li>
-                        <li>Human approval gates — where automation needs human sign-off before proceeding</li>
+                        <li>Clean, minimal function signatures — agents should not need complex encoding logic</li>
+                        <li>Gas optimization for high-frequency calls — every opcode matters at agent scale</li>
+                        <li>Composability patterns — how this protocol plugs into the existing suite</li>
+                        <li>Upgrade paths — immutable core logic with configurable parameters</li>
+                        <li>Failure modes — what happens when dependencies are unavailable</li>
                     </ul>
-                    <div class="deliverable">Deliverable: Architecture Diagram + Agent Specification Document</div>
+                    <div class="deliverable">Deliverable: Interface Specification + Architecture Diagram</div>
                 </div>
 
                 <div class="method-detail">
@@ -176,53 +180,48 @@
                         <div class="method-detail__number">3</div>
                         <div class="method-detail__title">Build</div>
                     </div>
-                    <p>We build the system in iterative sprints, delivering working pieces you can review and test along the way. No big-bang delivery where you see the final product for the first time on launch day.</p>
-                    <p>The build phase covers:</p>
+                    <p>Solidity for on-chain logic. Python and FastAPI for off-chain services that complement the contracts. Every line of code ships with tests.</p>
+                    <p>Build standards:</p>
                     <ul>
-                        <li>AI agent development with proper prompt engineering, tool use, and error handling</li>
-                        <li>Backend APIs and data pipelines</li>
-                        <li>Frontend dashboards and admin interfaces</li>
-                        <li>Database schema and data migration if replacing existing systems</li>
-                        <li>Testing — unit tests, integration tests, and end-to-end validation</li>
+                        <li>Solidity smart contracts with full NatSpec documentation</li>
+                        <li>Comprehensive test suites — unit, integration, and property-based tests</li>
+                        <li>Fuzz testing for edge cases and unexpected input combinations</li>
+                        <li>Gas benchmarking on every public function</li>
+                        <li>Off-chain service development with structured error handling and logging</li>
                     </ul>
-                    <p>You get access to a staging environment where you can interact with the system as it develops. Feedback loops are short — typically weekly demos with adjustments.</p>
-                    <div class="deliverable">Deliverable: Working System on Staging Environment</div>
+                    <div class="deliverable">Deliverable: Tested Contracts + Off-Chain Services</div>
                 </div>
 
                 <div class="method-detail">
                     <div class="method-detail__header">
                         <div class="method-detail__number">4</div>
-                        <div class="method-detail__title">Integrate</div>
+                        <div class="method-detail__title">Audit</div>
                     </div>
-                    <p>The AI system needs to work with your existing tools, not replace everything at once. We connect the new system to your current stack — CRM, email, Slack, databases, third-party APIs, and whatever else your team relies on.</p>
-                    <p>Integration includes:</p>
+                    <p>No protocol deploys to mainnet without passing three independent security layers. This is non-negotiable regardless of protocol complexity or deployment urgency.</p>
+                    <p>Three-layer security process:</p>
                     <ul>
-                        <li>API connections to your existing services (Salesforce, HubSpot, Mailchimp, Slack, etc.)</li>
-                        <li>Data migration from old systems to new</li>
-                        <li>Webhook configuration for real-time event handling</li>
-                        <li>Authentication and permission setup</li>
-                        <li>Parallel running period where old and new systems operate side by side</li>
+                        <li>Automated scanning — static analysis, known vulnerability patterns, dependency checks</li>
+                        <li>Manual code review — line-by-line review with focus on access control, reentrancy, and economic logic</li>
+                        <li>Economic attack modeling — game-theoretic analysis of incentive structures and potential exploits</li>
                     </ul>
-                    <div class="deliverable">Deliverable: Fully Integrated System + Migration Report</div>
+                    <div class="deliverable">Deliverable: Security Audit Report + Remediation Log</div>
                 </div>
 
                 <div class="method-detail">
                     <div class="method-detail__header">
                         <div class="method-detail__number">5</div>
-                        <div class="method-detail__title">Operate</div>
+                        <div class="method-detail__title">Deploy</div>
                     </div>
-                    <p>The system goes live. We deploy to your production infrastructure — VPS, cloud, or on-premise — with monitoring, alerting, and automated health checks. The goal is autonomous operation with minimal human oversight.</p>
-                    <p>Operational setup includes:</p>
+                    <p>Base mainnet deployment with full operational infrastructure. Every protocol goes live with monitoring, emergency controls, and documentation for integrators.</p>
+                    <p>Deployment includes:</p>
                     <ul>
-                        <li>Production deployment with Docker containerization</li>
-                        <li>Monitoring dashboards for system health, agent performance, and error rates</li>
-                        <li>Alerting via Telegram, Slack, or email when issues arise</li>
-                        <li>Automated recovery and restart procedures</li>
-                        <li>Scheduled cron jobs for recurring agent tasks</li>
-                        <li>Documentation and runbooks for your team</li>
+                        <li>Base mainnet contract deployment with verified source code</li>
+                        <li>Monitoring dashboards for transaction volume, gas usage, and error rates</li>
+                        <li>Rate limiting and abuse prevention at the API layer</li>
+                        <li>Kill switches for emergency protocol pausing</li>
+                        <li>Integration documentation with code examples and ABI references</li>
                     </ul>
-                    <p>Post-launch support (1-6 months depending on tier) covers bug fixes, performance tuning, and minor adjustments as you learn how the system performs in production.</p>
-                    <div class="deliverable">Deliverable: Production Deployment + Monitoring + Documentation</div>
+                    <div class="deliverable">Deliverable: Mainnet Deployment + Monitoring + Documentation</div>
                 </div>
             </div>
         </section>
@@ -233,20 +232,20 @@
                 <h2 class="text-center mb-8">Guiding Principles</h2>
                 <div class="grid-2">
                     <div class="card">
-                        <h4 class="mb-2">Ship working software, not documents</h4>
-                        <p class="text-secondary" style="margin: 0;">Every milestone delivers something you can click on, interact with, and test. Architecture documents exist to support the build, not replace it.</p>
+                        <h4 class="mb-2">Ship working protocols, not whitepapers</h4>
+                        <p class="text-secondary" style="margin: 0;">Every protocol is deployed on mainnet and processing real transactions. Documentation supports the code, not the other way around.</p>
                     </div>
                     <div class="card">
-                        <h4 class="mb-2">Optimize for total cost of ownership</h4>
-                        <p class="text-secondary" style="margin: 0;">We pick models, infrastructure, and architectures that minimize your ongoing costs — not just the build cost.</p>
+                        <h4 class="mb-2">Optimize for agent throughput</h4>
+                        <p class="text-secondary" style="margin: 0;">Gas efficiency, predictable costs, and fast settlement. Agents operate at machine speed — the infrastructure must keep up.</p>
                     </div>
                     <div class="card">
-                        <h4 class="mb-2">Human-in-the-loop where it matters</h4>
-                        <p class="text-secondary" style="margin: 0;">Full automation is the goal, but critical decisions get human approval gates. The system escalates when unsure.</p>
+                        <h4 class="mb-2">Security is non-negotiable</h4>
+                        <p class="text-secondary" style="margin: 0;">Three-layer auditing on every protocol. No exceptions for timeline pressure. A compromised protocol endangers the entire composable stack.</p>
                     </div>
                     <div class="card">
-                        <h4 class="mb-2">Graceful degradation</h4>
-                        <p class="text-secondary" style="margin: 0;">When an API goes down or a model fails, the system handles it gracefully — retries, fallbacks, and alerts instead of crashes.</p>
+                        <h4 class="mb-2">Composability enables innovation</h4>
+                        <p class="text-secondary" style="margin: 0;">Protocols that work together create capabilities that no single protocol could offer. Clean interfaces make novel combinations possible.</p>
                     </div>
                 </div>
             </div>
@@ -256,9 +255,9 @@
         <section class="section">
             <div class="container">
                 <div class="cta-banner">
-                    <h2>Ready for the Audit?</h2>
-                    <p>The first step is always a conversation. Book a free discovery call and we will start mapping your current costs and opportunities.</p>
-                    <a href="contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
+                    <h2>Explore the Protocol Suite</h2>
+                    <p>See the full list of protocols, their interfaces, and how they compose together.</p>
+                    <a href="index.html#protocols" class="btn-primary btn-lg">Explore the Protocols</a>
                 </div>
             </div>
         </section>
