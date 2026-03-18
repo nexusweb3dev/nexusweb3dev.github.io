@@ -172,15 +172,14 @@ Markdown file you can:
 
 Traditional audits: $6,000-$10,000.
 
-AI-powered scans: **$300-$2,000** depending on depth.
+AI-powered scans via x402 API: **pay-per-call with USDC on Base**. No subscriptions, no minimums.
 
-Here's the breakdown:
-
-| Tier | Price | Turnaround | What You Get |
-|------|-------|------------|--------------|
-| Quick Scan | $300-$500 | 30 min | Automated checks + risk score |
-| Standard Review | $750-$1,000 | 2-4 hours | Automated + manual code review |
-| Premium + Monitoring | $1,500-$2,000 | 24 hours | Full analysis + 7-day monitoring |
+| Endpoint | Price/Call | What You Get |
+|----------|-----------|--------------|
+| Token Scan | $2.00 | Automated checks + risk score |
+| Attack Surface | $1.00 | Contract vulnerability analysis |
+| Risk Score | $0.10 | Quick risk rating |
+| Full PoC | $5.00 | Deep analysis + exploit modeling |
 
 **Who should use which tier?**
 
