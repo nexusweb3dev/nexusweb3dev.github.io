@@ -67,6 +67,9 @@
                         <div class="stats-bar__label">Mainnet</div>
                     </div>
                 </div>
+                <div class="patch-notice">
+                    🛡️ Security patch deployed March 18, 2026 — 6 contracts redeployed. Zero known vulnerabilities. <a href="https://github.com/nexusweb3dev/nexusweb3-protocols" target="_blank">View audit history &rarr;</a>
+                </div>
             </div>
         </section>
 
@@ -106,7 +109,7 @@
                     </div>
                     <p class="text-secondary mb-4">The money rails. Wallets, identity, escrow, yield, insurance, reputation, governance, marketplace, cross-chain, and launchpad.</p>
                     <div class="protocol-grid">
-                        <a href="https://basescan.org/address/0x1F28579F8C2dffde8746169116bb3a4d9E516f5A" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0x190474472bf3534A73c76CB50D105CC2F35D2ccb" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentVault</div>
                             <div class="protocol-card__desc">Non-custodial smart wallet with operator spending limits</div>
                             <div class="protocol-card__fee">0.1% deposit</div>
@@ -228,7 +231,7 @@
                     </div>
                     <p class="text-secondary mb-4">Guardrails and compliance. Emergency stops, KYA verification, audit trails, bounties, licensing, milestones, subscriptions, insolvency, referrals, and collectives.</p>
                     <div class="protocol-grid">
-                        <a href="https://basescan.org/address/0xaca81a316f9ef14a374014fa0ea2cba70034fdf0" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0x2Bf370a377dBfD45EDF36d1ede218D4fd2071eb1" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentKillSwitch</div>
                             <div class="protocol-card__desc">Emergency stop with spending limits</div>
                             <div class="protocol-card__fee">0.01 ETH</div>
@@ -258,22 +261,22 @@
                             <div class="protocol-card__desc">Milestone-based escrow payments</div>
                             <div class="protocol-card__fee">0.5% contract</div>
                         </a>
-                        <a href="https://basescan.org/address/0xca1092abf9101f05cecf1e85c5e2684ee4658d25" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0x6E7350598d12809ccc98985440aEcb09CE728bbf" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentSubscription</div>
                             <div class="protocol-card__desc">Recurring billing for agent services</div>
                             <div class="protocol-card__fee">0.5% payments</div>
                         </a>
-                        <a href="https://basescan.org/address/0x320c1148ca58a26Fa57DB515C5c2F7d839FDeC80" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0x3e511326E22d291f2A3c5516b09318a34DC01152" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentInsolvency</div>
                             <div class="protocol-card__desc">Debt management and orderly wind-down</div>
                             <div class="protocol-card__fee">1% settlement</div>
                         </a>
-                        <a href="https://basescan.org/address/0xc282CE402954A7188266241dD708d9dbE8812236" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0xc7774DEBC022Eb5A1cE619F612e85AD40bd6D9A7" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentReferral</div>
                             <div class="protocol-card__desc">Viral referral system — 10% of fees forever</div>
                             <div class="protocol-card__fee">10% referral</div>
                         </a>
-                        <a href="https://basescan.org/address/0x0aba4411E1f0d968B0B59445ac9b1244735c100E" target="_blank" rel="noopener" class="protocol-card">
+                        <a href="https://basescan.org/address/0xd7Be25591ad1eb21d9e84c0B2daC757EfD413a16" target="_blank" rel="noopener" class="protocol-card">
                             <div class="protocol-card__name">AgentCollective</div>
                             <div class="protocol-card__desc">Agent DAOs — pool resources, share profits</div>
                             <div class="protocol-card__fee">0.05% AUM</div>
@@ -319,6 +322,11 @@
                         <div class="stat-card__number">0</div>
                         <div class="stat-card__label">Slither High/Medium</div>
                         <div class="stat-card__sub">Clean across all 30 contracts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">31/31</div>
+                        <div class="stat-card__label">Contracts Verified</div>
+                        <div class="stat-card__sub">All verified on Basescan</div>
                     </div>
                 </div>
 
@@ -420,12 +428,12 @@
                 <div class="card">
                     <h3 class="mb-3">Quick Start</h3>
                     <pre class="code-block"><code><span class="code-comment">// 1. Safety first — register kill switch BEFORE funding</span>
-AgentKillSwitch(0xaca8...fdf0).registerAgent{value: 0.01 ether}(
+AgentKillSwitch(0x2Bf3...1eb1).registerAgent{value: 0.01 ether}(
     agentAddress, 1_000_000_000, 100, 86400
 );
 
 <span class="code-comment">// 2. Deploy non-custodial smart wallet</span>
-address vault = AgentVaultFactory(0x1F28...f5A).createVault(
+address vault = AgentVaultFactory(0x1904...2ccb).createVault(
     IERC20(USDC), "My Agent Vault", "mAV", bytes32(0)
 );
 

@@ -690,6 +690,23 @@ h4 {
     font-weight: 500;
 }
 
+.patch-notice {
+    background: rgba(0, 255, 100, 0.05);
+    border: 1px solid rgba(0, 255, 100, 0.15);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: #60c080;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.patch-notice a {
+    color: #80e0a0;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
 /* Stat cards (grid layout) */
 .stat-card {
     text-align: center;
